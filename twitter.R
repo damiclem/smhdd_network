@@ -26,6 +26,9 @@ res.data
 auth.bearer_token <- res.data$access_token
 auth.bearer_token
 
+
+
+
 # Get user info from API
 req <- GET('https://api.twitter.com/1.1/users/lookup.json?screen_name=TUeindhoven',
            add_headers(Authorization = paste('Bearer', auth.bearer_token, sep=' ')))
@@ -36,3 +39,12 @@ res.data <- content(req)
 res.data
 
 
+
+# Get friends from API
+req <- GET('https://api.twitter.com/1.1/friends/list.json?cursor=-1&screen_name=TUeindhoven&skip_status=true&include_user_entities=false&count=200',
+           add_headers(Authorization = paste('Bearer', auth.bearer_token, sep=' ')))
+
+for (i in 1:200){
+  print(content(req)$users[[i]]$id_str)
+}
+# come si usano i cursori?

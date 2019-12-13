@@ -1,0 +1,201 @@
+"Rank","University","Score","Country","Twitter_Name","Twitter_ID","Friends"
+1,"Harvard University",100,"USA","Harvard","39585367",0
+2,"California Institute of Technology (Caltech)",98.137,"USA","Caltech","16536844",0
+3,"Imperial College London",97.706,"UK","imperialcollege","15353955",0
+4,"Stanford University",97.604,"USA","Stanford","18036441",0
+5,"Yale University",97.506,"USA","Yale","5695032",0
+6,"Massachusetts Institute of Technology (MIT)",97.364,"USA","MIT","15460048",0
+7,"ETH Zurich (Swiss Federal Institute of Technology)",96.187,"Switzerland","ETH_en","204279080",0
+8,"Columbia University",95.393,"USA","Columbia","248795646",0
+9,"University of Cambridge",95.258,"UK","Cambridge_Uni","33474655",0
+10,"University of Oxford",94.989,"UK","UniofOxford","48289662",0
+11,"University of Chicago",94.712,"USA","UChicago","131144285",0
+12,"Karolinska Institute",94.642,"Sweden","karolinskainst","26710622",0
+13,"Johns Hopkins University",94.299,"USA","JohnsHopkins","14441010",0
+14,"University College London",94.172,"UK","ucl","322601789",0
+15,"Northwestern University",94.117,"USA","NorthwesternU","33639255",0
+16,"Princeton University",93.993,"USA","Princeton","5694822",0
+17,"Ecole Polytechnique Federale de Lausanne",93.75,"Switzerland","EPFL","108364911",0
+18,"University of Pennsylvania",93.525,"USA","IUPedu","16422886",0
+19,"Cornell University",92.271,"USA","Cornell","17369110",0
+20,"Washington University in St. Louis",91.325,"USA","WUSTL","17815224",0
+21,"Carnegie Mellon University",90.608,"USA","CarnegieMellon","17631078",0
+22,"Scuola Normale Superiore di Pisa",90.345,"Italy","scuolanormale","305449685",0
+23,"Case Western Reserve University",90.314,"USA","cwru","16290017",0
+24,"University of Michigan",89.447,"USA","UMich","88836132",0
+25,"Boston University",89.443,"USA","BU_Tweets","104561488",0
+26,"Brown University",89.043,"USA","BrownUniversity","14884486",0
+27,"Technical University of Denmark",88.842,"Denmark","DTUtweet","294010596",0
+28,"Seoul National University",88.52,"Republic of Korea","SNUnow","317658876",0
+29,"Rice University",88.292,"USA","RiceUniversity","19720630",0
+30,"Royal Institute of Technology (KTH)",88.173,"Sweden","KTHuniversity","1547563471",0
+31,"University of Edinburgh",87.837,"UK","EdinburghUni","23426889",0
+32,"University of California, Los Angeles",87.674,"USA","UCLA","18918483",0
+33,"Pohang University of Science and Technology",87.159,"Republic of Korea","postech2020","108232814",0
+34,"New York University",86.848,"USA","nyuniversity","28421825",0
+35,"Peking University",86.74,"China","PKU1898","850157859065151488",0
+36,"Tufts University",86.468,"USA","TuftsUniversity","15168790",0
+37,"University of Wisconsin - Madison",86.418,"USA","UWMadison","15763818",0
+38,"King`s College London",86.399,"UK","KingsCollegeLon","22624441",0
+39,"McGill University",86.373,"Canada","mcgillu","18065266",0
+40,"Wageningen University and Research Center",86.116,"Netherlands","WUR","20045134",0
+42,"University of Pittsburgh",86.051,"USA","PitTweet","4748329276",0
+42,"University of Tokyo",86.051,"Japan","UTokyo_News_en","305339576",0
+43,"Emory University",85.995,"USA","EmoryUniversity","16438655",0
+44,"Lund University",85.692,"Sweden","lunduniversity","26267038",0
+45,"Australian National University",85.664,"Australia","ANUmedia","41699268",0
+46,"Tsinghua University",85.557,"China","Tsinghua_Uni","4300743322",0
+47,"University of Bern",85.365,"Switzerland","unibern","60514114",0
+48,"Korea Advanced Institute of Science and Technology (KAIST)",85.287,"Republic of Korea","kaistpr","1395992863",0
+49,"Vanderbilt University",85.054,"USA","VanderbiltU","14775752",0
+50,"University of Lausanne",85,"Switzerland","unil","227358393",0
+51,"University of Twente",84.63,"Netherlands","UTwente","18991614",0
+52,"University of California, Berkeley",84.502,"USA","UCBerkeley","176932593",0
+53,"Chalmers University of Technology",84.156,"Sweden","chalmersuniv","2492619936",0
+54,"University of Minnesota",84.15,"USA","UMNews","18917572",0
+55,"Ludwig Maximilian University of Munich",84.048,"Germany","LMU_Muenchen","91982547",0
+56,"University of Washington",83.76,"USA","UW","27103822",0
+57,"University of Helsinki",83.736,"Finland","helsinkiuni","168607383",0
+58,"University of Zurich",83.631,"Switzerland","UZH_en","460255493",0
+59,"University of Toronto",83.556,"Canada","UofT","821814254",0
+60,"Nanyang Technological University",83.252,"Singapore","NTUsg","217313010",0
+61,"University of Southampton",83.011,"UK","unisouthampton","26203004",0
+62,"University of Manchester",82.985,"UK","OfficialUoM","2217874898",0
+63,"University of British Columbia",82.932,"Canada","UBC","28453440",0
+64,"National University of Singapore",82.807,"Singapore","NUSingapore","67260538",0
+65,"University of California, San Diego",82.757,"USA","UCSanDiego","338660808",0
+66,"Pierre and Marie Curie University (Sorbonne University)",82.696,"France","Sorbonne_Univ_","940938863790428160",0
+67,"Technical University of Munich",82.65,"Germany","TU_Muenchen","49567644",0
+68,"University of California, Davis",82.631,"USA","ucdavis","15987188",0
+69,"University of North Carolina",82.383,"USA","UNC","20683724",0
+70,"Ruprecht Karl University of Heidelberg",82.378,"Germany","UniHeidelberg","145182442",0
+71,"University of Sydney",82.279,"Australia","Sydney_Uni","20104025",0
+72,"University of Geneva",82.265,"Switzerland","unige_en","3345275435",0
+73,"University of Rochester",82.221,"USA","UofR","14778782",0
+74,"Shanghai Jiao Tong University",82.177,"China","sjtu1896","1112610624930902018",0
+75,"Tokyo Institute of Technology",82.082,"Japan","tokyotech_en","440574690",0
+76,"Zhejiang University",82.035,"China","ZJU_China","851622726217342977",0
+77,"University of Southern California",81.955,"USA","USC","19809471",0
+78,"University of Bristol",81.943,"UK","BristolUni","24723695",0
+79,"Fudan University",81.689,"China","FudanUniversity","286768601",0
+80,"Kyoto University",81.609,"Japan","KyotoU_News","2800929805",0
+81,"University of Alabama Birmingham",81.481,"USA","UofAlabama","18685948",0
+82,"University of Illinois at Chicago",81.453,"USA","thisisUIC","194314756",0
+83,"Georgetown University",81.444,"USA","Georgetown","7856542",0
+84,"Indian Institute of Science",81.393,"India","iiscbangalore","2773756070",0
+85,"Dartmouth College",81.289,"USA","dartmouth","21226678",0
+86,"University of Science and Technology of China",81.222,"China","HUST_China","805790042",0
+87,"Erasmus University Rotterdam",80.873,"Netherlands","RSMErasmus","25472458",0
+88,"University of Melbourne",80.78,"Australia","unimelb","14862794",0
+89,"Georgia Institute of Technology",80.388,"USA","GeorgiaTech","19080617",0
+90,"London School of Economics and Political Science",80.368,"UK","LSEnews","155924984",0
+91,"University of Birmingham",80.332,"UK","unibirmingham","17865542",0
+92,"George Washington University",80.317,"USA","GWtweets","28101965",0
+93,"Rutgers the State University of New Jersey",80.311,"USA","RutgersU","19272796",0
+94,"Ohio State University",80.263,"USA","OhioState","18846918",0
+95,"University of Gottingen",80.149,"Germany","uniGoettingen","50638548",0
+96,"Swedish University of Agricultural Sciences",80.134,"Sweden","_SLU","128211584",0
+97,"Ecole Normale Superieure, Lyon",79.992,"France","UniversiteLyon","125296735",0
+98,"Radboud University Nijmegen",79.739,"Netherlands","Radboud_Uni","45826046",0
+99,"Tohoku University",79.661,"Japan","TohokuUniPR","2540701770",0
+100,"Utrecht University",79.582,"Netherlands","UtrechtUni","33550981",0
+101,"University of Florida",79.524,"USA","UF","44168607",0
+102,"University of Bergen",79.35,"Norway","UiB","17867748",0
+103,"University of Miami",79.337,"USA","miamiuniversity","42790918",0
+104,"Purdue University",79.095,"USA","LifeAtPurdue","16134525",0
+105,"University of Queensland Australia",79.084,"Australia","UQ_News","17383073",0
+106,"University of Notre Dame",79.059,"USA","NotreDame","6507762",0
+107,"Osaka University",79.011,"Japan","osaka_univ_e","442479642",0
+108,"National Graduate School of Engineering, Paris",78.997,"France","UoNgradschool","143850633",0
+109,"University of Warwick",78.632,"UK","warwickuni","15916215",0
+110,"Medical University of Vienna",78.561,"Austria","MedUni_Wien","320702172",0
+111,"Michigan State University",78.461,"USA","michiganstateu","41346792",0
+112,"University of Sao Paulo",78.389,"Brazil","usponline","24241923",0
+113,"Universite de Montreal",78.315,"Canada","UMontreal","135178777",0
+114,"University of New South Wales",78.178,"Australia","UNSW","14769030",0
+115,"Lomonosov Moscow State University",78.053,"Russia","msu_ru","259982093",0
+116,"Chinese University Hong Kong",77.994,"Hong Kong","CUHKofficial","928098400980975616",0
+117,"Hebrew University of Jerusalem",77.946,"Israel","HebrewU","54480908",0
+118,"University of Maryland, College Park",77.807,"USA","UofMaryland","16129880",0
+119,"University of St. Andrews",77.803,"UK","univofstandrews","19910826",0
+120,"Aarhus University",77.767,"Denmark","AarhusUni","224283051",0
+121,"University of Groningen",77.655,"Netherlands","univgroningen","33535466",0
+122,"Free University of Berlin",77.412,"Germany","FU_Berlin","2152668890",0
+123,"University of Liverpool",77.341,"UK","LivUni","18903739",0
+124,"Nanjing University",77.301,"China","NanjingUnivers1","871618430192951296",0
+125,"RWTH Aachen University",77.27,"Germany","RWTH","928008620",0
+126,"McMaster University",77.197,"Canada","McMasterU","57709461",0
+127,"University of Calgary",76.913,"Canada","UCalgary","16809022",0
+128,"University of Utah",76.614,"USA","UUtah","14748679",0
+129,"Monash University",76.6,"Australia","MonashUni","15926727",0
+130,"National Taiwan University",76.55,"Taiwan","q_nationaltaiwa","215243976",0
+131,"City University of Hong Kong",76.451,"Hong Kong","CityUHongKong","81070376",0
+132,"Durham University",76.447,"UK","durham_uni","277391629",0
+133,"Tulane University",76.373,"USA","Tulane","28120277",0
+134,"Autonomous University of Barcelona",76.296,"Spain","BathAstronomers","941236085778276352",0
+135,"Karlsruhe Institute of Technology",76.295,"Germany","KITKarlsruhe","91110697",0
+136,"University of Iowa",76.175,"USA","uiowa","14534931",0
+137,"Nagoya University",76.166,"Japan","NagoyaUniv","83761255",0
+138,"University of Western Australia",76.08,"Australia","uwanews","22742520",0
+140,"Technische Universitat Dresden (TU Dresden)",76.004,"Germany","tudresden_de","146074105",0
+140,"University of Nova Gorica",76.004,"Slovenia","solamoskupnost","807719888",0
+141,"Trinity College Dublin",75.989,"Ireland","tcddublin","31537951",0
+142,"University of Adelaide",75.846,"Australia","UniofAdelaide","22573758",0
+143,"University of Hamburg",75.79,"Germany","unihh","66370363",0
+144,"Kyushu University",75.745,"Japan","KyushuUniv_EN","3215762043",0
+145,"Technical University of Berlin",75.483,"Germany","TUBerlin","63449466",0
+146,"University of Cape Town",75.453,"South Africa","UCT_news","562781948",0
+147,"Hokkaido University",75.351,"Japan","HokkaidoUni","481839331",0
+148,"University of Glasgow",75.328,"UK","UofGlasgow","19760151",0
+149,"Rockefeller University",75.246,"USA","RockefellerUniv","27024872",0
+150,"Lancaster University",75.159,"UK","LancasterUni","25521930",0
+151,"Katholieke Universiteit Leuven (KU Leuven)",75.153,"Belgium","KU_Leuven","130828533",0
+152,"State University of New York, Stony Brook",74.975,"USA","stonybrooku","50762782",0
+153,"Humboldt University of Berlin",74.963,"Germany","HumboldtUni","108566175",0
+154,"University Paris Diderot - Paris 7",74.955,"France","ParisDiderot","51400447",0
+155,"University of Cologne",74.928,"Germany","UniCologne","21084942",0
+156,"University of Malaya",74.869,"Malaysia","unimalaya","821364216",0
+157,"National Research Nuclear University MEPhI (Moscow Engineering Physics Institute)",74.845,"Russia","UMephi","1046683139718991872",0
+158,"Colorado School of Mines",74.788,"USA","coschoolofmines","28147271",0
+159,"University of Colorado",74.772,"USA","WesternColoU","29513379",0
+160,"University of Kansas",74.589,"USA","KUnews","1162109050227699717",0
+161,"University of Munster",74.588,"Germany","WWU_Muenster","24677217",0
+162,"University of Sheffield",74.492,"UK","sheffielduni","19341622",0
+163,"University of Barcelona",74.483,"Spain","UniBarcelona","188725330",0
+164,"Sungkyunkwan University",74.43,"Republic of Korea","SKKGSB","213576685",0
+165,"University of Arizona",74.35,"USA","uarizona","14862639",0
+166,"Cardiff University",74.158,"UK","cardiffuni","12134862",0
+167,"University of Leicester",74.092,"UK","uniofleicester","81089247",0
+168,"Technion Israel Institute of Technology",73.921,"Israel","TechnionLive","224964544",0
+169,"University of Illinois at Urbana - Champaign",73.901,"USA","Illinois_Alma","18165866",0
+170,"University of California, Irvine",73.804,"USA","UCIrvine","19669207",0
+171,"Korea University",73.527,"Republic of Korea","UniversityKorea","1186487858",0
+172,"University of California, Santa Barbara",73.499,"USA","ucsantabarbara","18105473",0
+173,"Northeastern University",73.344,"USA","Northeastern","46477409",0
+174,"Indiana University",73.32,"USA","IndianaUniv","100367386",0
+175,"Hanyang University",73.241,"Republic of Korea","i_hanyang","51478517",0
+176,"Pennsylvania State University",73.195,"USA","penn_state","119376050",0
+177,"Tokyo Medical and Dental University",73.182,"Japan","TMDUniversity","1152088361969963009",0
+178,"Tomsk State University",73.129,"Russia","TomskUni","2408564130",0
+179,"Yonsei University",73.067,"Republic of Korea","yonsei_u","173679304",0
+180,"Texas A&M University",72.951,"USA","TAMU","17237540",0
+181,"Weizmann Institute of Science",72.817,"Israel","WeizmannScience","39958512",0
+182,"University of Wurzburg",72.814,"Germany","Uni_WUE","593618061",0
+183,"State University of Campinas (Unicamp)",72.702,"Brazil","unicampoficial","788430113859854336",0
+184,"University of Erlangen Nuremberg",72.608,"Germany","UniFAU","96097812",0
+185,"University of York",72.505,"UK","yorkuniversity","4836947526",0
+186,"University of Ottawa",72.435,"Canada","uOttawa","352311644",0
+187,"Tel Aviv University",72.407,"Israel","TelAvivUni","790846916192002048",0
+188,"University of Tsukuba",72.365,"Japan","UofTsukuba","2777744022",0
+189,"University of Gothenburg",72.28,"Sweden","uniofgothenburg","35720969",0
+190,"Aalto University",72.261,"Finland","AaltoUniversity","90345811",0
+191,"University of Reading",72.079,"UK","UniofReading","59142515",0
+192,"University of Exeter",71.939,"UK","UniofExeter","60642183",0
+193,"University of East Anglia",71.866,"UK","uniofeastanglia","26758197",0
+194,"State University of New York, Buffalo",71.864,"USA","UBuffalo","2326061460",0
+195,"University of Ulm",71.841,"Germany","uni_ulm","48372117",0
+196,"Gwangju Institute of Science and Technology",71.786,"Republic of Korea","KAISTPR","1395992863",0
+197,"Western University",71.739,"Canada","WesternU","20601500",0
+198,"University of Freiburg",71.275,"Germany","UniFreiburg","148286775",0
+199,"Universite Libre de Bruxelles",71.252,"Belgium","ULBruxelles","179941278",0
+200,"Wake Forest University",71.15,"USA","WakeForest","34685994",0

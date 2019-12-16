@@ -1,0 +1,201 @@
+rank,university,score,country,league,twitter
+1,Harvard University,100,USA,Diamond League,Harvard
+2,California Institute of Technology (Caltech),98.137,USA,Diamond League,Caltech
+3,Imperial College London,97.706,UK,Diamond League,imperialcollege
+4,Stanford University,97.604,USA,Diamond League,Stanford
+5,Yale University,97.506,USA,Diamond League,Yale
+6,Massachusetts Institute of Technology (MIT),97.364,USA,Diamond League,MIT
+7,ETH Zurich (Swiss Federal Institute of Technology),96.187,Switzerland,Diamond League,ETH_en
+8,Columbia University,95.393,USA,Diamond League,Columbia
+9,University of Cambridge,95.258,UK,Diamond League,Cambridge_Uni
+10,University of Oxford,94.989,UK,Diamond League,UniofOxford
+11,University of Chicago,94.712,USA,Diamond League,UChicago
+12,Karolinska Institute,94.642,Sweden,Diamond League,karolinskainst
+13,Johns Hopkins University,94.299,USA,Diamond League,JohnsHopkins
+14,University College London,94.172,UK,Diamond League,ucl
+15,Northwestern University,94.117,USA,Diamond League,NorthwesternU
+16,Princeton University,93.993,USA,Diamond League,Princeton
+17,Ecole Polytechnique Federale de Lausanne,93.75,Switzerland,Diamond League,EPFL
+18,University of Pennsylvania,93.525,USA,Diamond League,IUPedu
+19,Cornell University,92.271,USA,Diamond League,Cornell
+20,Washington University in St. Louis,91.325,USA,Diamond League,WUSTL
+21,Carnegie Mellon University,90.608,USA,Diamond League,CarnegieMellon
+22,Scuola Normale Superiore di Pisa,90.345,Italy,Diamond League,scuolanormale
+23,Case Western Reserve University,90.314,USA,Diamond League,cwru
+24,University of Michigan,89.447,USA,Diamond League,UMich
+25,Boston University,89.443,USA,Diamond League,BU_Tweets
+26,Brown University,89.043,USA,Diamond League,BrownUniversity
+27,Technical University of Denmark,88.842,Denmark,Diamond League,DTUtweet
+28,Seoul National University,88.52,Republic of Korea,Diamond League,SNUnow
+29,Rice University,88.292,USA,Diamond League,RiceUniversity
+30,Royal Institute of Technology (KTH),88.173,Sweden,Diamond League,KTHuniversity
+31,University of Edinburgh,87.837,UK,Diamond League,EdinburghUni
+32,"University of California, Los Angeles",87.674,USA,Diamond League,UCLA
+33,Pohang University of Science and Technology,87.159,Republic of Korea,Diamond League,postech2020
+34,New York University,86.848,USA,Diamond League,nyuniversity
+35,Peking University,86.74,China,Diamond League,PKU1898
+36,Tufts University,86.468,USA,Diamond League,TuftsUniversity
+37,University of Wisconsin - Madison,86.418,USA,Diamond League,UWMadison
+38,King`s College London,86.399,UK,Diamond League,KingsCollegeLon
+39,McGill University,86.373,Canada,Diamond League,mcgillu
+40,Wageningen University and Research Center,86.116,Netherlands,Diamond League,WUR
+42,University of Pittsburgh,86.051,USA,Diamond League,PitTweet
+42,University of Tokyo,86.051,Japan,Diamond League,UTokyo_News_en
+43,Emory University,85.995,USA,Diamond League,EmoryUniversity
+44,Lund University,85.692,Sweden,Diamond League,lunduniversity
+45,Australian National University,85.664,Australia,Diamond League,ANUmedia
+46,Tsinghua University,85.557,China,Diamond League,Tsinghua_Uni
+47,University of Bern,85.365,Switzerland,Diamond League,unibern
+48,Korea Advanced Institute of Science and Technology (KAIST),85.287,Republic of Korea,Diamond League,kaistpr
+49,Vanderbilt University,85.054,USA,Diamond League,VanderbiltU
+50,University of Lausanne,85,Switzerland,Diamond League,unil
+51,University of Twente,84.63,Netherlands,Diamond League,UTwente
+52,"University of California, Berkeley",84.502,USA,Diamond League,UCBerkeley
+53,Chalmers University of Technology,84.156,Sweden,Diamond League,chalmersuniv
+54,University of Minnesota,84.15,USA,Diamond League,UMNews
+55,Ludwig Maximilian University of Munich,84.048,Germany,Diamond League,LMU_Muenchen
+56,University of Washington,83.76,USA,Diamond League,UW
+57,University of Helsinki,83.736,Finland,Diamond League,helsinkiuni
+58,University of Zurich,83.631,Switzerland,Diamond League,UZH_en
+59,University of Toronto,83.556,Canada,Diamond League,UofT
+60,Nanyang Technological University,83.252,Singapore,Diamond League,NTUsg
+61,University of Southampton,83.011,UK,Diamond League,unisouthampton
+62,University of Manchester,82.985,UK,Diamond League,OfficialUoM
+63,University of British Columbia,82.932,Canada,Diamond League,UBC
+64,National University of Singapore,82.807,Singapore,Diamond League,NUSingapore
+65,"University of California, San Diego",82.757,USA,Diamond League,UCSanDiego
+66,Pierre and Marie Curie University (Sorbonne University),82.696,France,Diamond League,Sorbonne_Univ_
+67,Technical University of Munich,82.65,Germany,Diamond League,TU_Muenchen
+68,"University of California, Davis",82.631,USA,Diamond League,ucdavis
+69,University of North Carolina,82.383,USA,Diamond League,UNC
+70,Ruprecht Karl University of Heidelberg,82.378,Germany,Diamond League,UniHeidelberg
+71,University of Sydney,82.279,Australia,Diamond League,Sydney_Uni
+72,University of Geneva,82.265,Switzerland,Diamond League,unige_en
+73,University of Rochester,82.221,USA,Diamond League,UofR
+74,Shanghai Jiao Tong University,82.177,China,Diamond League,sjtu1896
+75,Tokyo Institute of Technology,82.082,Japan,Diamond League,tokyotech_en
+76,Zhejiang University,82.035,China,Diamond League,ZJU_China
+77,University of Southern California,81.955,USA,Diamond League,USC
+78,University of Bristol,81.943,UK,Diamond League,BristolUni
+79,Fudan University,81.689,China,Diamond League,FudanUniversity
+80,Kyoto University,81.609,Japan,Diamond League,KyotoU_News
+81,University of Alabama Birmingham,81.481,USA,Diamond League,UofAlabama
+82,University of Illinois at Chicago,81.453,USA,Diamond League,thisisUIC
+83,Georgetown University,81.444,USA,Diamond League,Georgetown
+84,Indian Institute of Science,81.393,India,Diamond League,iiscbangalore
+85,Dartmouth College,81.289,USA,Diamond League,dartmouth
+86,University of Science and Technology of China,81.222,China,Diamond League,HUST_China
+87,Erasmus University Rotterdam,80.873,Netherlands,Diamond League,RSMErasmus
+88,University of Melbourne,80.78,Australia,Diamond League,unimelb
+89,Georgia Institute of Technology,80.388,USA,Diamond League,GeorgiaTech
+90,London School of Economics and Political Science,80.368,UK,Diamond League,LSEnews
+91,University of Birmingham,80.332,UK,Diamond League,unibirmingham
+92,George Washington University,80.317,USA,Diamond League,GWtweets
+93,Rutgers the State University of New Jersey,80.311,USA,Diamond League,RutgersU
+94,Ohio State University,80.263,USA,Diamond League,OhioState
+95,University of Gottingen,80.149,Germany,Diamond League,uniGoettingen
+96,Swedish University of Agricultural Sciences,80.134,Sweden,Diamond League,_SLU
+97,"Ecole Normale Superieure, Lyon",79.992,France,Diamond League,UniversiteLyon
+98,Radboud University Nijmegen,79.739,Netherlands,Diamond League,Radboud_Uni
+99,Tohoku University,79.661,Japan,Diamond League,TohokuUniPR
+100,Utrecht University,79.582,Netherlands,Diamond League,UtrechtUni
+101,University of Florida,79.524,USA,Golden League,UF
+102,University of Bergen,79.35,Norway,Golden League,UiB
+103,University of Miami,79.337,USA,Golden League,miamiuniversity
+104,Purdue University,79.095,USA,Golden League,LifeAtPurdue
+105,University of Queensland Australia,79.084,Australia,Golden League,UQ_News
+106,University of Notre Dame,79.059,USA,Golden League,NotreDame
+107,Osaka University,79.011,Japan,Golden League,osaka_univ_e
+108,"National Graduate School of Engineering, Paris",78.997,France,Golden League,UoNgradschool
+109,University of Warwick,78.632,UK,Golden League,warwickuni
+110,Medical University of Vienna,78.561,Austria,Golden League,MedUni_Wien
+111,Michigan State University,78.461,USA,Golden League,michiganstateu
+112,University of Sao Paulo,78.389,Brazil,Golden League,usponline
+113,Universite de Montreal,78.315,Canada,Golden League,UMontreal
+114,University of New South Wales,78.178,Australia,Golden League,UNSW
+115,Lomonosov Moscow State University,78.053,Russia,Golden League,msu_ru
+116,Chinese University Hong Kong,77.994,Hong Kong,Golden League,CUHKofficial
+117,Hebrew University of Jerusalem,77.946,Israel,Golden League,HebrewU
+118,"University of Maryland, College Park",77.807,USA,Golden League,UofMaryland
+119,University of St. Andrews,77.803,UK,Golden League,univofstandrews
+120,Aarhus University,77.767,Denmark,Golden League,AarhusUni
+121,University of Groningen,77.655,Netherlands,Golden League,univgroningen
+122,Free University of Berlin,77.412,Germany,Golden League,FU_Berlin
+123,University of Liverpool,77.341,UK,Golden League,LivUni
+124,Nanjing University,77.301,China,Golden League,NanjingUnivers1
+125,RWTH Aachen University,77.27,Germany,Golden League,RWTH
+126,McMaster University,77.197,Canada,Golden League,McMasterU
+127,University of Calgary,76.913,Canada,Golden League,UCalgary
+128,University of Utah,76.614,USA,Golden League,UUtah
+129,Monash University,76.6,Australia,Golden League,MonashUni
+130,National Taiwan University,76.55,Taiwan,Golden League,q_nationaltaiwa
+131,City University of Hong Kong,76.451,Hong Kong,Golden League,CityUHongKong
+132,Durham University,76.447,UK,Golden League,durham_uni
+133,Tulane University,76.373,USA,Golden League,Tulane
+134,Autonomous University of Barcelona,76.296,Spain,Golden League,BathAstronomers
+135,Karlsruhe Institute of Technology,76.295,Germany,Golden League,KITKarlsruhe
+136,University of Iowa,76.175,USA,Golden League,uiowa
+137,Nagoya University,76.166,Japan,Golden League,NagoyaUniv
+138,University of Western Australia,76.08,Australia,Golden League,uwanews
+140,Technische Universitat Dresden (TU Dresden),76.004,Germany,Golden League,tudresden_de
+140,University of Nova Gorica,76.004,Slovenia,Golden League,solamoskupnost
+141,Trinity College Dublin,75.989,Ireland,Golden League,tcddublin
+142,University of Adelaide,75.846,Australia,Golden League,UniofAdelaide
+143,University of Hamburg,75.79,Germany,Golden League,unihh
+144,Kyushu University,75.745,Japan,Golden League,KyushuUniv_EN
+145,Technical University of Berlin,75.483,Germany,Golden League,TUBerlin
+146,University of Cape Town,75.453,South Africa,Golden League,UCT_news
+147,Hokkaido University,75.351,Japan,Golden League,HokkaidoUni
+148,University of Glasgow,75.328,UK,Golden League,UofGlasgow
+149,Rockefeller University,75.246,USA,Golden League,RockefellerUniv
+150,Lancaster University,75.159,UK,Golden League,LancasterUni
+151,Katholieke Universiteit Leuven (KU Leuven),75.153,Belgium,Golden League,KU_Leuven
+152,"State University of New York, Stony Brook",74.975,USA,Golden League,stonybrooku
+153,Humboldt University of Berlin,74.963,Germany,Golden League,HumboldtUni
+154,University Paris Diderot - Paris 7,74.955,France,Golden League,ParisDiderot
+155,University of Cologne,74.928,Germany,Golden League,UniCologne
+156,University of Malaya,74.869,Malaysia,Golden League,unimalaya
+157,National Research Nuclear University MEPhI (Moscow Engineering Physics Institute),74.845,Russia,Golden League,UMephi
+158,Colorado School of Mines,74.788,USA,Golden League,coschoolofmines
+159,University of Colorado,74.772,USA,Golden League,WesternColoU
+160,University of Kansas,74.589,USA,Golden League,KUnews
+161,University of Munster,74.588,Germany,Golden League,WWU_Muenster
+162,University of Sheffield,74.492,UK,Golden League,sheffielduni
+163,University of Barcelona,74.483,Spain,Golden League,UniBarcelona
+164,Sungkyunkwan University,74.43,Republic of Korea,Golden League,SKKGSB
+165,University of Arizona,74.35,USA,Golden League,uarizona
+166,Cardiff University,74.158,UK,Golden League,cardiffuni
+167,University of Leicester,74.092,UK,Golden League,uniofleicester
+168,Technion Israel Institute of Technology,73.921,Israel,Golden League,TechnionLive
+169,University of Illinois at Urbana - Champaign,73.901,USA,Golden League,Illinois_Alma
+170,"University of California, Irvine",73.804,USA,Golden League,UCIrvine
+171,Korea University,73.527,Republic of Korea,Golden League,UniversityKorea
+172,"University of California, Santa Barbara",73.499,USA,Golden League,ucsantabarbara
+173,Northeastern University,73.344,USA,Golden League,Northeastern
+174,Indiana University,73.32,USA,Golden League,IndianaUniv
+175,Hanyang University,73.241,Republic of Korea,Golden League,i_hanyang
+176,Pennsylvania State University,73.195,USA,Golden League,penn_state
+177,Tokyo Medical and Dental University,73.182,Japan,Golden League,TMDUniversity
+178,Tomsk State University,73.129,Russia,Golden League,TomskUni
+179,Yonsei University,73.067,Republic of Korea,Golden League,yonsei_u
+180,Texas A&M University,72.951,USA,Golden League,TAMU
+181,Weizmann Institute of Science,72.817,Israel,Golden League,WeizmannScience
+182,University of Wurzburg,72.814,Germany,Golden League,Uni_WUE
+183,State University of Campinas (Unicamp),72.702,Brazil,Golden League,unicampoficial
+184,University of Erlangen Nuremberg,72.608,Germany,Golden League,UniFAU
+185,University of York,72.505,UK,Golden League,yorkuniversity
+186,University of Ottawa,72.435,Canada,Golden League,uOttawa
+187,Tel Aviv University,72.407,Israel,Golden League,TelAvivUni
+188,University of Tsukuba,72.365,Japan,Golden League,UofTsukuba
+189,University of Gothenburg,72.28,Sweden,Golden League,uniofgothenburg
+190,Aalto University,72.261,Finland,Golden League,AaltoUniversity
+191,University of Reading,72.079,UK,Golden League,UniofReading
+192,University of Exeter,71.939,UK,Golden League,UniofExeter
+193,University of East Anglia,71.866,UK,Golden League,uniofeastanglia
+194,"State University of New York, Buffalo",71.864,USA,Golden League,UBuffalo
+195,University of Ulm,71.841,Germany,Golden League,uni_ulm
+196,Gwangju Institute of Science and Technology,71.786,Republic of Korea,Golden League,KAISTPR
+197,Western University,71.739,Canada,Golden League,WesternU
+198,University of Freiburg,71.275,Germany,Golden League,UniFreiburg
+199,Universite Libre de Bruxelles,71.252,Belgium,Golden League,ULBruxelles
+200,Wake Forest University,71.15,USA,Golden League,WakeForest

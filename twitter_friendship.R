@@ -36,69 +36,6 @@ auth.api_secret_key <- auth.data$api_secret_key
 # Save bearer token (needed to access APIs in the subsequent calls)
 auth.bearer_token <- req.auth(auth.api_key, auth.api_secret_key)
 
-# # Get univeristies with twitter ids
-# rankings <- read_csv('data/rankings_clean.csv')
-# 
-# 
-# # Define a table for twitter accounts
-# users <- tibble(
-#   id=character(),
-#   screen_name=character(),
-#   location=character(),
-#   url=character(),
-#   description=character(),
-#   protected=logical(),
-#   verified=logical(),
-#   followers_count=numeric(),
-#   friends_count=numeric()
-# )
-# 
-# # Retrieve users info from their screen name through the Twitter APIs
-# # Only 100 users can be retrieved at each API call
-# # A maximum number of 300 users can be retrieved in a 15 minutes window
-# users.ids <- rankings %>%
-#   select('twitter') %>%  # Get user ids
-#   pull()  # Turn user ids into plain array
-# # Define user batches of size 100
-# users.batches <- split(users.ids, ceiling(seq_along(users.ids)/100))
-# # Loop through each 100 users batch
-# for (i in 1:length(users.batches)) {
-#   # Make API request
-#   req <- GET(
-#     'https://api.twitter.com/1.1/users/lookup.json',
-#     add_headers(Authorization = paste('Bearer', auth.bearer_token, sep=' ')),
-#     query=list(
-#       screen_name = paste(users.batches[[i]], collapse=','),
-#       include_entities=0,
-#       tweet_mode=0
-#     ))
-#   # Get results
-#   res.status <- status_code(req)
-#   res.data <- content(req)
-#   # Check status: if 404 authenticate again
-#   
-#   # Loop through each retrieved user
-#   for (j in 1:length(res.data)) {
-#     # Get current user data
-#     curr.user <- res.data[[j]]
-#     # Add user data to table
-#     users <- users %>% add_row(
-#       id=as.character(curr.user$id_str),
-#       screen_name=curr.user$screen_name,
-#       location=curr.user$location,
-#       # url=curr.user$url,
-#       description=curr.user$description,
-#       protected=as.logical(curr.user$protected),
-#       verified=as.logical(curr.user$verified),
-#       followers_count=as.numeric(curr.user$followers_count),
-#       friends_count=as.numeric(curr.user$friends_count)
-#     )
-#   }
-# }
-# 
-# # Save users table to disk
-# users %>% write_csv('data/users.csv')
-
 
 # Query twitter APIs for retrieving friends of each user
 # First cursor is -1, each cursor identifies a page of results
@@ -128,9 +65,10 @@ friendship <- tibble(
 # Retireve users ids
 users.ids <- users %>%
   select('id') %>%
-  pull()
+  pull() %>%
+  as.character()
 # Index of the current user
-curr.index <- 1
+curr.index <- 24
 # Index of the current cursor, for the current user (-1 means first page)
 curr.cursor <- -1
 # Define a continuous loop: break condition is checked inside
@@ -144,34 +82,32 @@ while(TRUE) {
     query=list(
       user_id = user.id,
       stringify_ids=1,
-      cursor = -1,
+      cursor = curr.cursor,
       count = 5000
     ))
   # Retrieve response data
   res.status <- status_code(req)
   res.data <- content(req)
-  # Debug
-  print(res.status)
-  print(res.data)
+  
   # Check status 200: request successfull
   if (res.status == 200) {
-    # Debug
-    print(curr.index)
-    print(curr.cursor)
-    # Get friends ids
-    friends.ids <- unlist(res.data$ids)
-    # Update friendship table
-    for (i in 1:length(friends.ids)) {
-      # Define current friend id
-      friend.id <- friends.ids[i]
-      # Update table
-      friendship <- friendship %>%
-        add_row(from=user.id, to=friend.id)
+    # Handle empty array
+    if (!is.null(unlist(res.data$ids))) {
+      # Get friends ids
+      friends.ids <- unlist(res.data$ids)
+      # Update friendship table
+      for (i in 1:length(friends.ids)) {
+        # Define current friend id
+        friend.id <- friends.ids[i]
+        # Update table
+        friendship <- friendship %>%
+          add_row(from=user.id, to=friend.id)
+      }
     }
-    # Debug
-    print(summary(friendship))
     # Get next cursor
     next.cursor <- res.data$next_cursor
+    # Debug
+    print(summary(friendship))
   }
   # Check 404: not found
   else if (res.status == 404) {
@@ -179,12 +115,21 @@ while(TRUE) {
     next.cursor <- 0
   }
   # Case request limit exceeded
-  else {
-    # Wait for a quarter hour
-    Sys.sleep(60)
-    # Execute the current step again
+  else if (res.status == 429) {
+    # Sleep for two minutes
+    Sys.sleep(120)
+    # Do current iteration again
     next
   }
+  # Case unknown error
+  else {
+    # Report unknown error
+    print('Exiting due to unknown error!')
+    print(res.status)
+    print(res.data)
+    break
+  }
+  
   # Loop exit condition: last cursor of last user
   if(curr.index >= length(users.ids) && next.cursor == 0) {
     break  # Exit the loop
@@ -201,6 +146,7 @@ while(TRUE) {
     # Update cursor
     curr.cursor <- next.cursor
   }
+  
   # Wait for next request (one minute waiting time)
   Sys.sleep(60)
 }

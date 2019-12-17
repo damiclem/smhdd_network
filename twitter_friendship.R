@@ -75,6 +75,8 @@ curr.cursor <- -1
 while(TRUE) {
   # Define current user id
   user.id <- users.ids[curr.index]
+  # user.id <- '18918483'
+  # curr.cursor <- -1
   # Make request to Twitter friends API
   req <- GET(
     'https://api.twitter.com/1.1/friends/ids.json',

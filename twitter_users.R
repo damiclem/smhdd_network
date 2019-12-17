@@ -86,7 +86,7 @@ for (i in 1:length(users.batches)) {
       id=as.character(curr.user$id_str),
       screen_name=curr.user$screen_name,
       location=curr.user$location,
-      # url=curr.user$url,
+      url=ifelse(exists('curr.user$url'), as.character(curr.user$url), NA),
       description=curr.user$description,
       protected=as.logical(curr.user$protected),
       verified=as.logical(curr.user$verified),

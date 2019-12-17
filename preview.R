@@ -23,3 +23,6 @@ View(friendship)
 
 # Get every university which has at least one friend in users
 View(friendship %>% distinct(from))
+
+# Get users with less than 100 friends
+View(users %>% filter(friends_count < 100))

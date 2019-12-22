@@ -11,7 +11,7 @@ rankings
 rankings <- rankings %>% 
   rename(rank=Rank, university=University, score=Score, country=Country, flag=Flag, league=League) %>%  # Reset names
   select(-flag) %>%  # Cut useless columns
-  slice(0:200) %>%  # Get only first 200 rows
+  slice(0:225) %>%  # Get only first 200 rows
   mutate(country=factor(country), league=factor(league))  # Factorize
 rankings
 

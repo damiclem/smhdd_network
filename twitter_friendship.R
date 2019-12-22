@@ -68,7 +68,7 @@ users.ids <- users %>%
   pull() %>%
   as.character()
 # Index of the current user
-curr.index <- 24
+curr.index <- 1
 # Index of the current cursor, for the current user (-1 means first page)
 curr.cursor <- -1
 # Define a continuous loop: break condition is checked inside
@@ -150,8 +150,11 @@ while(TRUE) {
   }
   
   # Wait for next request (one minute waiting time)
+  print(curr.index)
   Sys.sleep(60)
 }
 
 # Save friendship table to disk
 friendship %>% write_csv('data/friendship.csv')
+
+

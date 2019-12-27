@@ -1,6 +1,7 @@
-# Scaletta: 1) prendere i nomi da users 
+#  carico i dati
 
-
+users <- read.csv('C:/Users/pozza/Documents/GitHub/smhdd_network/data/users.csv', header = T)
+friendship<- read.csv('C:/Users/pozza/Documents/GitHub/smhdd_network/data/friendship.csv', header = T)
 
 # creo la matrice
 uni <- users$screen_name 
@@ -24,5 +25,5 @@ for( i in 1:length(uni))
 
 colnames(socio.matrix)<- uni
 rownames(socio.matrix)<- uni
-save(socio.matrix,file='C:/Users/pozza/OneDrive/Documenti/Francesco/High dimentional data/Progetto/smhdd_network-master/data/socioMatrix.RData')
+save(socio.matrix,file='C:/Users/pozza/Documents/GitHub/smhdd_network/socioMatrix.RData')
 

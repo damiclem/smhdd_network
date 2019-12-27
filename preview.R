@@ -1,7 +1,8 @@
 library(tidyverse)
 
 # Retrieve users table
-users <- read_csv('data/users.csv', col_types='cccccllnn')
+users <- read_csv('data/users.csv', col_types='cccccllnn') %>% 
+  distinct(id)
 # Retrieve friendship relationship table
 friendship <- read_csv('data/friendship.csv', col_types='cc')
 

@@ -1,59 +1,126 @@
-# carico i dati
-load('C:/GitHub/smhdd_network/socioMatrix.RData')
-
+# Dependencies
+library(tidyverse)
 library(igraph)
-
-net2 = graph_from_adjacency_matrix(socio.matrix, mode = 'directed', weighted = NULL, diag=F)
-str(net)
-
-
-### Analisi dei dati in quanto rete
-E(net2)
-V(net2)
-
-edge_density(net2)
-
-
-vuoti = which(degree(net2) < 1)
-vuoti
-net = delete.vertices(net2,vuoti)
-
-# sociabilit‡
-outDegree <- apply(socio.matrix, 1,sum)
-hist(outDegree, col = 'gray')
-head(sort(outDegree, decreasing = T),10)
-# le unit‡ con valori pi˘ alti sembrano essere universit‡
-# meno conosciute
-
-# leader 
-inDegree <- apply(socio.matrix, 2,sum)
-hist(inDegree, col = 'gray')
-head(sort(inDegree, decreasing = T),10)
-# le universit‡ pi˘ seguite sono nache le pi˘ prestigiose
-
-#?shortest_paths
-shortest_paths(net2, from = 'Harvard')
-shortest_paths(net2, from = 'UCT_news')
-# sono shortest path che tengono conto della direzionalit‡
-
-
-#altre misure viste a lezione
-hist(sqrt(betweenness(net2)), breaks = 20, col = 'lavender')
-diameter(net2)
-
-plot(net2,edge.arrow.size = 0.2, vertex.label=NA)
-plot(net2, layout=layout.fruchterman.reingold, vertex.label=NA)
-
-# Pacchetto pi˘ carino per la visualizzazione
 library(ggraph)
+library(boot)
+library(ergm)
+
+
+# Load socio matrix
+load('data/socio_matrix.RData')
+
+# Load datasets
+users <- read_csv('data/users.csv', col_types='cccccllnn') %>% distinct
+friendship <- read_csv('data/friendship.csv', col_types='cc')
+
+# Keep only friendship with valid users
+friendship <- friendship %>%
+  inner_join(users %>% select(id), by=c('from'='id')) %>%
+  inner_join(users %>% select(id), by=c('to'='id'))
+
+
+# Create igraph from adjacency matrix
+net.full = graph_from_adjacency_matrix(socio.matrix, mode='directed', weighted=NULL, diag=F)
+net.full
+
+# Show network info
+str(net.full)
+
+
+# Network analysis
+E(net.full) # Show edges
+V(net.full) # Show vertices
+
+# Compute and show edge density
+edge_density(net.full)
+
+# Add degree column to users
+users <- users %>%
+  add_column(degree=degree(net.full))
+# Get users which have no friends (i.e. overall degree 0)
+v.isolated <- which(degree(net.full) < 1)
+v.isolated
+
+# Remove isolated vertices
+net = delete_vertices(net.full, v.isolated)
+net
+
+# Outdegree analysis (sociability?)
+# Add outdegree column to users
+users <- users %>% 
+  add_column(out_degree = apply(socio.matrix, 1, sum))
+# Show outdegree histogram
+ggplot(data=users, aes(x=reorder(screen_name, -out_degree), y=out_degree, fill=out_degree)) +
+  geom_bar(stat='identity') +
+  theme(axis.text.x = element_text(angle=90, size=6)) +
+  theme(legend.position = 'none') +
+  labs(x='University', y='Outdegree')
+# Le unit√† con valori pi√π alti sembrano essere le universit√† meno conosciute
+
+# Indegree analysis (leader)
+# Add indegree column to users
+users <- users %>%
+  add_column(in_degree = apply(socio.matrix, 2, sum))
+# Show indegree histogram
+ggplot(data=users, aes(x=reorder(screen_name, -in_degree), y=in_degree, fill=in_degree)) +
+  geom_bar(stat='identity') +
+  theme(axis.text.x = element_text(angle=90, size=6)) +
+  theme(legend.position = 'none') +
+  labs(x='University', y='Indegree')
+# Le universit√† pi√π seguite sembrano essere le pi√π prestigiose
+
+# Joint outdegree and indegree analysis (is the outdegree inversely proportional to indegree?)
+# Show scatter plot of indegree and outdegree
+ggplot(data=users, aes(x=out_degree, y=in_degree, colour=screen_name, label=screen_name)) +
+  geom_point() +
+  geom_text(aes(label=screen_name), hjust=-0.2, vjust=0, size=3) +
+  theme(legend.position = 'none') +
+  labs(x='Outdegree', y='Indegree')
+
+# Check shortest paths
+# Note that these shortest paths take into account directionality
+shortest_paths(net.full, from='39585367') # From harvard
+shortest_paths(net.full, from='562781948') # From UCT_news
+
+
+# Other measures
+# Compute and add betweenness score to users table
+users <- users %>%
+  add_column(betweenness = sqrt(betweenness(net.full)))
+# Show betweenness histogram
+ggplot(data=users, aes(x=reorder(screen_name, -betweenness), y=betweenness, fill=betweenness)) +
+  geom_bar(stat='identity') +
+  theme(axis.text.x=element_text(angle=90, size=6)) +
+  theme(legend.position='none') +
+  labs(x='University', y='Betweenness')
+
+# Compute diameter
+diameter(net.full)
+
+# Plot network
+plot(net.full, edge.arrow.size=0.2, vertex.label=NA)
+plot(net.full, layout=layout.fruchterman.reingold, vertex.label=NA)
+
 
 #ggraph(net) + geom_edge_link() +   # add edges to the plot
-#              geom_node_point()    # add nodes to the plot                          
+#              geom_node_point()    # add nodes to the plot
 
-X11()
-ggraph(net, layout="lgl") +
-  geom_edge_fan(color="gray50", width=0.8, alpha=0.5) +geom_node_point()+ 
-  theme_void()
+# Create a temporary network from friendship tibble
+net.tmp <- graph_from_data_frame(
+  # First table stores relationships (from -> to)
+  d=friendship,
+  # Second table stores vertices info (first column MUST be vertex id)
+  vertices=users,
+  # Graph is directed
+  directed=T
+)
+
+# Show network
+ggraph(net.tmp, layout='nicely') +
+  geom_edge_link(aes(colour = 1)) + 
+  geom_node_point() +
+  geom_node_text(aes(label=screen_name), hjust=-0.2, vjust=0, size=3) +
+  theme(legend.position = 'none')
 
 ## Inferenza ####
 
@@ -61,7 +128,7 @@ ggraph(net, layout="lgl") +
 # per la valutazione del modello usiamo un bootstrap parametrico 
 # come fatto nelle slides
 
-library(boot)
+
 
 # scrivo la funzione per calcolare lo std error di outDegree e inDegree
 stat <- function(data)
@@ -78,7 +145,7 @@ stat <- function(data)
 stat(socio.matrix)
 
 # scrivo la funzione per generare la rete secondo RGM
-# in pratica genero 199*199 bernuolli indipendenti di probabilit‡ la densit‡ della rete
+# in pratica genero 199*199 bernuolli indipendenti di probabilit? la densit? della rete
 # e le salvo in una matrice
 
 ran.gen1 <- function(data,param)
@@ -108,12 +175,12 @@ abline(v=boot.SRG$t0[2],col=2)
 mean(boot.SRG$t[,2]>boot.SRG$t0[2]) # per quello che vale
 
 # Commento: I dati smentiscono in modo netto l'ipotesi che il processo 
-# generatore sia un SRG. I nodi mostrano molta pi˘ eterogeneit‡ sia in inDegree
+# generatore sia un SRG. I nodi mostrano molta pi? eterogeneit? sia in inDegree
 # che in outDegree.
 
 ## Modello ANOVA ###
 
-# bisogna classificare come fattori indivuduali sia la socialit‡ che l'attrativit‡ 
+# bisogna classificare come fattori indivuduali sia la socialit? che l'attrativit? 
 # pongo i valori sulla diagonale come NA
 Y <- socio.matrix
 diag(Y) <- NA
@@ -128,7 +195,7 @@ Cidx[1:4,1:4]
 
 Y[1:4,1:4] 
 
-# vettorizzo tutte le quantit‡
+# vettorizzo tutte le quantit?
 y <- c(Y)
 ridx <- c(Ridx)
 cidx <- c(Cidx)
@@ -154,13 +221,13 @@ a.hat<- fit2$coef[1+1:(nrow(Y)-1)]   ; a.hat<-c(a.hat,-sum(a.hat) )
 b.hat<- fit2$coef[nrow(Y)+1:(nrow(Y)-1)]   ; b.hat<-c(b.hat,-sum(b.hat) ) 
 summary(a.hat)
 summary(b.hat)
-# Cacolo le probabilit‡ previste per ogni cella
+# Cacolo le probabilit? previste per ogni cella
 muij.mle<- mu.hat+ outer(a.hat,b.hat,"+")
 p.mle<-exp(muij.mle)/(1+exp(muij.mle)) ; diag(p.mle)<-NA
 
-# Ora analizziamo attraverso un bootstrap parametrico la qualit‡ del 
+# Ora analizziamo attraverso un bootstrap parametrico la qualit? del 
 # modello inferenziale
-library(boot)
+
 stat <- function(data)
 {
   # std error outdegree e indegree
@@ -208,14 +275,14 @@ abline(v=boot.RCE$t0[3],col=2)
 # la distribuzione delle diadi comuni evidenzia come ci siano degli effetti
 # di dipendenza di cui non stiamo tenendo conto.
 
-### Modello Ergm pi˘ complesso ####
+### Modello Ergm pi? complesso ####
 # carico le esplicative
 
 X <- read.csv('C:/GitHub/smhdd_network/data/users.csv', header = T, sep=',')
 head(X)
 X$location
 
-# mi creo l'esplicativa 'usa' che indica le universit‡ americane
+# mi creo l'esplicativa 'usa' che indica le universit? americane
 usa <- c(1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1,
          1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1,
          1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1,
@@ -235,7 +302,7 @@ cbind(rownames(socio.matrix), usa)
 #rankD <- c( rep(0,100),rep(1,99))
 
 # creo un oggetto network
-library(ergm)
+
 net <- as.network(socio.matrix)
 diag(socio.matrix)<- NA
 set.vertex.attribute(net,"state",usa)
@@ -300,21 +367,21 @@ save(fit.ergm7, file='ergm_fit2')
 outD <- apply(socio.matrix,1,sum,na.rm=T)
 inD <- apply(socio.matrix,2,sum,na.rm=T)
 
-# cerco di vedere se c'Ë una relazione tra posizione e outdeg e indeg
-# perchË al momento non si riesce a spiegare la variabilit‡
-plot(seq(1:199),outD) # non si vede molto forse Ë per questo che non riusciamo a spiegare
-                      # la variabilit‡ in uscita
+# cerco di vedere se c'? una relazione tra posizione e outdeg e indeg
+# perch? al momento non si riesce a spiegare la variabilit?
+plot(seq(1:199),outD) # non si vede molto forse ? per questo che non riusciamo a spiegare
+                      # la variabilit? in uscita
 plot(seq(1:199),inD)
 plot(X$friends_count[1:199],inD)
 
 plot(density(outD))
 quantile(outD, probs =c(0.25,0.5,0.75,0.90) )
-# stampo le universit‡ che hanno un outdegree che supera il 75% percentile
+# stampo le universit? che hanno un outdegree che supera il 75% percentile
 outlier <-(outD>29) 
 outlier
 
-# commento outdegree: Ë evidente come vi sia circa un 25% di ossservazioni anomale
-# va indagato il perchË
+# commento outdegree: ? evidente come vi sia circa un 25% di ossservazioni anomale
+# va indagato il perch?
 
 fit.ergm8<-ergm( net~ edges+mutual+sender(nodes=outlier)
                  + nodeocov("state") + nodeicov("state")+ nodematch("state")
@@ -330,8 +397,8 @@ summary(fit.ergm8)
 
 # Commento del modello
 # Questo modello sembra il migliore e offre anche delle interpretazioni interessanti
-# le universit‡ tendono a seguire di pi˘ se hanno un renking scarso mentre vengono seguite
-# di pi˘ le universit‡ pi˘ famose. Stesso discorso tra americane e non
+# le universit? tendono a seguire di pi? se hanno un renking scarso mentre vengono seguite
+# di pi? le universit? pi? famose. Stesso discorso tra americane e non
 # scrivo la funzione per generare dal modello stimato 
 # NB data=socio.matrix fit invece deve essere l'ergm che vogliomo testare
 ran.gen2 <- function(data,fit)
@@ -344,7 +411,6 @@ ran.gen2 <- function(data,fit)
 apply(ran.gen2(socio.matrix,fit.ergm7),1,sum,na.rm=T)
 
 # Faccio il bootstrap parametrico utilizzando la funzione boot
-library(boot)
 R <- 10
 boot.ERGM <- boot( data= socio.matrix, statistic = stat, R=R, sim = "parametric",ran.gen = ran.gen2,mle=fit.ergm7 )
 boot.ERGM$t
@@ -369,4 +435,4 @@ abline(v=boot.ERGM$t0[2],col=2)
 hist(boot.ERGM$t[,3], nclass = 50, xlim = c(100,600))
 abline(v=boot.ERGM$t0[3],col=2)
 # Commento: 
-# In realt‡ il risultato Ë ancora abbastanza insoddisfacente in outdegree e indegree
+# In realt? il risultato ? ancora abbastanza insoddisfacente in outdegree e indegree

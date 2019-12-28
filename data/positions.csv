@@ -1,0 +1,226 @@
+university,id,country,location,lat,lng,color
+Harvard University,39585367,US,Cambridge,42.3751,-71.10561,#FF0000
+California Institute of Technology (Caltech),16536844,US,Pasadena,29.69106,-95.2091,#FD0001
+Imperial College London,15353955,UK,London,51.50853,-0.12574,#FC0002
+Stanford University,18036441,US,Stanford,37.42411,-122.16608,#FB0003
+Yale University,5695032,US,New Haven,41.30815,-72.92816,#FA0004
+Massachusetts Institute of Technology (MIT),15460048,US,Cambridge,42.3751,-71.10561,#F90005
+ETH Zurich (Swiss Federal Institute of Technology),204279080,CH,Zürich,47.36667,8.55,#F80006
+Columbia University,248795646,US,New York,40.71427,-74.00597,#F70007
+University of Cambridge,33474655,UK,Cambridge,52.2,0.11667,#F50009
+University of Oxford,48289662,UK,Oxford,51.75222,-1.25596,#F4000A
+University of Chicago,131144285,US,Chicago,41.85003,-87.65005,#F3000B
+Karolinska Institute,26710622,SE,Stockholm,59.33258,18.0649,#F2000C
+Johns Hopkins University,14441010,US,Baltimore,39.29038,-76.61219,#F1000D
+University College London,322601789,UK,London,51.50853,-0.12574,#F0000E
+Northwestern University,33639255,US,Evanston,42.04114,-87.69006,#EF000F
+Princeton University,5694822,US,Princeton,40.34872,-74.65905,#ED0011
+Ecole Polytechnique Federale de Lausanne,108364911,CH,Lausanne,46.516,6.63282,#EC0012
+University of Pennsylvania,16422886,US,Indiana,40.00032,-86.25027,#EB0013
+Cornell University,17369110,US,Ithaca,42.44063,-76.49661,#EA0014
+Washington University in St. Louis,17815224,US,St. Louis,38.63162,-90.24925,#E90015
+Carnegie Mellon University,17631078,US,Pittsburgh,40.44062,-79.99589,#E80016
+Scuola Normale Superiore di Pisa,305449685,IT,Pisa,43.70853,10.4036,#E70017
+Case Western Reserve University,16290017,US,Cleveland,41.4995,-81.69541,#E50019
+University of Michigan,88836132,US,Ann Arbor,42.27756,-83.74088,#E4001A
+Boston University,104561488,US,Boston,42.35843,-71.05977,#E3001B
+Brown University,14884486,US,Providence,41.82399,-71.41283,#E2001C
+Technical University of Denmark,294010596,DK,Copenhagen,55.67594,12.56553,#E1001D
+Seoul National University,317658876,KR,Seoul,37.566,126.9784,#E0001E
+Rice University,19720630,US,Houston,29.76328,-95.36327,#DF001F
+Royal Institute of Technology (KTH),1547563471,SE,Stockholm,59.33258,18.0649,#DD0021
+University of Edinburgh,23426889,UK,Edinburgh,55.95206,-3.19648,#DC0022
+"University of California, Los Angeles",18918483,US,Los Angeles,34.05223,-118.24368,#DB0023
+Pohang University of Science and Technology,108232814,KR,Pohang,36.02917,129.36481,#DA0024
+New York University,28421825,US,New York,40.71427,-74.00597,#D90025
+Peking University,850157859065151500,CN,Beijing,39.9075,116.39723,#D80026
+Tufts University,15168790,US,Medford,42.32652,-122.87559,#D70027
+University of Wisconsin - Madison,15763818,US,Madison,43.07305,-89.40123,#D60028
+King`s College London,22624441,UK,London,51.50853,-0.12574,#D4002A
+McGill University,18065266,CA,Montréal,45.50884,-73.58781,#D3002B
+Wageningen University and Research Center,20045134,NL,Wageningen,51.97,5.66667,#D2002C
+University of Pittsburgh,4748329276,US,Pittsburgh,40.44062,-79.99589,#D1002D
+University of Tokyo,305339576,JP,Tokyo,35.6895,139.69171,#D0002E
+Emory University,16438655,US,Atlanta,33.749,-84.38798,#CF002F
+Lund University,26267038,SE,Lund,55.70584,13.19321,#CE0030
+Australian National University,41699268,AU,Canberra,-35.28346,149.12807,#CC0032
+Tsinghua University,4300743322,CN,Beijing,39.9075,116.39723,#CB0033
+University of Bern,60514114,CH,Bern,46.94809,7.44744,#CA0034
+Korea Advanced Institute of Science and Technology (KAIST),1395992863,KR,Daejeon,36.34913,127.38493,#C90035
+Vanderbilt University,14775752,US,Nashville,36.16589,-86.78444,#C80036
+University of Lausanne,227358393,CH,Lausanne,46.516,6.63282,#C70037
+University of Twente,18991614,NL,Enschede,52.21833,6.89583,#C60038
+"University of California, Berkeley",176932593,US,Berkeley,37.87159,-122.27275,#C4003A
+Chalmers University of Technology,2492619936,SE,Gothenburg,57.70716,11.96679,#C3003B
+University of Minnesota,18917572,US,Minneapolis,44.97997,-93.26384,#C2003C
+Ludwig Maximilian University of Munich,91982547,DE,Munich,48.13743,11.57549,#C1003D
+University of Washington,27103822,US,Seattle,47.60621,-122.33207,#C0003E
+University of Helsinki,168607383,FI,Helsinki,60.16952,24.93545,#BF003F
+University of Zurich,460255493,CH,Zurich,47.36667,8.55,#BE0040
+University of Toronto,821814254,CA,Toronto,43.70011,-79.4163,#BC0042
+Nanyang Technological University,217313010,SG,Singapore,1.28967,103.85007,#BB0043
+University of Southampton,26203004,UK,Southampton,50.90395,-1.40428,#BA0044
+University of Manchester,2217874898,UK,Manchester,53.48095,-2.23743,#B90045
+University of British Columbia,28453440,CA,Vancouver,49.24966,-123.11934,#B80046
+National University of Singapore,67260538,SG,Singapore,1.28967,103.85007,#B70047
+"University of California, San Diego",338660808,US,La Jolla,32.84727,-117.2742,#B60048
+Pierre and Marie Curie University (Sorbonne University),940938863790428200,FR,Paris,48.85341,2.3488,#B50049
+Technical University of Munich,49567644,DE,Munich,48.13743,11.57549,#B3004B
+"University of California, Davis",15987188,US,Davis,38.54491,-121.74052,#B2004C
+University of North Carolina,20683724,US,Chapel Hill,35.9132,-79.05584,#B1004D
+Ruprecht Karl University of Heidelberg,145182442,DE,Heidelberg,49.40768,8.69079,#B0004E
+University of Sydney,20104025,AU,Sydney,-33.86785,151.20732,#AF004F
+University of Geneva,3345275435,CH,Geneva,46.20222,6.14569,#AE0050
+University of Rochester,14778782,US,Rochester,44.02163,-92.4699,#AD0051
+Shanghai Jiao Tong University,1112610624930902e3,CN,Shanghai,31.22222,121.45806,#AB0053
+Tokyo Institute of Technology,440574690,JP,Ookayama,35.60973,139.68149,#AA0054
+Zhejiang University,851622726217343e3,CN,Hangzhou,30.29365,120.16142,#A90055
+University of Southern California,19809471,US,Los Angeles,34.05223,-118.24368,#A80056
+University of Bristol,24723695,UK,Bristol,51.45523,-2.59665,#A70057
+Fudan University,286768601,CN,Shangai,31.22222,121.45806,#A60058
+Kyoto University,2800929805,JP,Kyoto,35.02107,135.75385,#A50059
+University of Alabama Birmingham,18685948,US,Tuscaloosa,33.20984,-87.56917,#A3005B
+University of Illinois at Chicago,194314756,US,Chicago,41.85003,-87.65005,#A2005C
+Georgetown University,7856542,US,Washington,38.89511,-77.03637,#A1005D
+Indian Institute of Science,2773756070,IN,Bangalore,12.97194,77.59369,#A0005E
+Dartmouth College,21226678,US,Hanover,39.80066,-76.98304,#9F005F
+University of Science and Technology of China,805790042,CN,Wuhan,30.58333,114.26667,#9E0060
+Erasmus University Rotterdam,25472458,NL,Rotterdam,51.9225,4.47917,#9D0061
+University of Melbourne,14862794,AU,Melbourne,-37.814,144.96332,#9B0063
+Georgia Institute of Technology,19080617,US,Atlanta,33.749,-84.38798,#9A0064
+London School of Economics and Political Science,155924984,UK,London,51.50853,-0.12574,#990065
+University of Birmingham,17865542,UK,Birmingham,52.48142,-1.89983,#980066
+George Washington University,28101965,US,Washington,38.89511,-77.03637,#970067
+Rutgers the State University of New Jersey,19272796,US,New Jersey,41.94394,-85.63249,#960068
+Ohio State University,18846918,US,Columbus,39.96118,-82.99879,#950069
+University of Gottingen,50638548,DE,Göttingen,51.53443,9.93228,#93006B
+Swedish University of Agricultural Sciences,128211584,SE,Uppsala,59.85882,17.63889,#92006C
+"Ecole Normale Superieure, Lyon",125296735,FR,Lyon,45.74846,4.84671,#91006D
+Radboud University Nijmegen,45826046,NL,Nijmegen,51.8425,5.85278,#90006E
+Tohoku University,2540701770,JP,Sendai,38.26667,140.86667,#8F006F
+Utrecht University,33550981,NL,Utrecht,52.09083,5.12222,#8E0070
+University of Florida,44168607,US,Gainesville,29.65163,-82.32483,#8D0071
+University of Bergen,17867748,NO,Bergen,60.39299,5.32415,#8C0072
+University of Miami,42790918,US,Oxford,37.27419,-97.16893,#8A0074
+Purdue University,16134525,US,West Lafayette,40.27535,-81.75096,#890075
+University of Queensland Australia,17383073,AU,Brisbane,-27.46794,153.02809,#880076
+University of Notre Dame,6507762,US,Notre Dame,41.70019,-86.23793,#870077
+Osaka University,442479642,JP,Suita,34.76143,135.51567,#860078
+"National Graduate School of Engineering, Paris",143850633,FR,Paris,48.85341,2.3488,#850079
+University of Warwick,15916215,UK,United Kingdom,54.75844,-2.69531,#84007A
+Medical University of Vienna,320702172,AT,Wien,48.20849,16.37208,#82007C
+Michigan State University,41346792,US,East Lansing,42.73698,-84.48387,#81007D
+University of Sao Paulo,24241923,BR,São Paulo,-23.5475,-46.63611,#80007E
+Universite de Montreal,135178777,CA,Montréal,45.50884,-73.58781,#7F007F
+University of New South Wales,14769030,AU,Sydney,-33.86785,151.20732,#7E0080
+Lomonosov Moscow State University,259982093,RU,Moscow,55.75222,37.61556,#7D0081
+Chinese University Hong Kong,928098400980975600,HK,Hong Kong,22.27832,114.17469,#7C0082
+Hebrew University of Jerusalem,54480908,IL,Jerusalem,31.76904,35.21633,#7A0084
+"University of Maryland, College Park",16129880,US,College Park,45.56066,-122.85926,#790085
+University of St. Andrews,19910826,UK,St Andrews,56.33871,-2.79902,#780086
+Aarhus University,224283051,DK,Aarhus,56.15674,10.21076,#770087
+University of Groningen,33535466,NL,Groningen,53.21917,6.56667,#760088
+Free University of Berlin,2152668890,DE,Berlin,52.52437,13.41053,#750089
+University of Liverpool,18903739,UK,Liverpool,53.41058,-2.97794,#74008A
+Nanjing University,871618430192951300,CN,Nanjing,32.06167,118.77778,#72008C
+RWTH Aachen University,928008620,DE,Aachen,50.77664,6.08342,#71008D
+McMaster University,57709461,CA,Hamilton,43.25521,-79.93103,#70008E
+University of Calgary,16809022,CA,Calgary,51.05011,-114.08529,#6F008F
+University of Utah,14748679,US,Salt Lake City,40.76078,-111.89105,#6E0090
+Monash University,15926727,AU,Melbourne,-37.814,144.96332,#6D0091
+National Taiwan University,215243976,TW,Taipei,25.04776,121.53185,#6C0092
+City University of Hong Kong,81070376,HK,Hong Kong,22.27832,114.17469,#6B0093
+Durham University,277391629,UK,Durham,54.67664,-1.76654,#690095
+Tulane University,28120277,US,New Orleans,29.95465,-90.07507,#680096
+Autonomous University of Barcelona,941236085778276400,ES,Barcelona,41.38879,2.15899,#670097
+Karlsruhe Institute of Technology,91110697,DE,Karlsruhe,49.00937,8.40444,#660098
+University of Iowa,14534931,US,Iowa City,41.66113,-91.53017,#650099
+Nagoya University,83761255,JP,Nagoya,35.18147,136.90641,#64009A
+University of Western Australia,22742520,AU,Perth,-31.95224,115.8614,#63009B
+Technische Universitat Dresden (TU Dresden),146074105,DE,Dresden,51.05089,13.73832,#61009D
+University of Nova Gorica,807719888,SI,Gorica,45.9,15.48333,#60009E
+Trinity College Dublin,31537951,IE,Dublin,53.33306,-6.24889,#5F009F
+University of Adelaide,22573758,AU,Adelaide,-34.92866,138.59863,#5E00A0
+University of Hamburg,66370363,DE,Hamburg,53.57532,10.01534,#5D00A1
+Kyushu University,3215762043,JP,Yokohama,35.43333,139.65,#5C00A2
+Technical University of Berlin,63449466,DE,Berlin,52.52437,13.41053,#5B00A3
+University of Cape Town,562781948,ZA,Cape Town,-33.92584,18.42322,#5900A5
+Hokkaido University,481839331,JP,Hokkaido,43.51669,142.44873,#5800A6
+University of Glasgow,19760151,UK,Scotland,56,-4,#5700A7
+Rockefeller University,27024872,US,New York,40.71427,-74.00597,#5600A8
+Lancaster University,25521930,UK,Lancaster,54.04649,-2.79988,#5500A9
+Katholieke Universiteit Leuven (KU Leuven),130828533,BE,Leuven,50.87959,4.70093,#5400AA
+"State University of New York, Stony Brook",50762782,US,Stony Brook,40.92565,-73.14094,#5300AB
+Humboldt University of Berlin,108566175,DE,Berlin,52.52437,13.41053,#5100AD
+University Paris Diderot - Paris 7,51400447,FR,Paris,48.85341,2.3488,#5000AE
+University of Cologne,21084942,DE,Köln,50.93333,6.95,#4F00AF
+University of Malaya,821364216,MY,Kuala Lumpur,3.1412,101.68653,#4E00B0
+National Research Nuclear University MEPhI (Moscow Engineering Physics Institute),1046683139718991900,RU,Moscow,55.75222,37.61556,#4D00B1
+Colorado School of Mines,28147271,US,Golden,39.75554,-105.2211,#4C00B2
+University of Colorado,29513379,US,Gunnison,33.94428,-90.94511,#4B00B3
+University of Kansas,1162109050227699700,US,Lawrence,38.97167,-95.23525,#4900B5
+University of Munster,24677217,DE,Münster,51.96236,7.62571,#4800B6
+University of Sheffield,19341622,UK,Sheffield,53.38297,-1.4659,#4700B7
+University of Barcelona,188725330,ES,Barcelona,41.38879,2.15899,#4600B8
+Sungkyunkwan University,213576685,KR,Seoul,37.566,126.9784,#4500B9
+University of Arizona,14862639,US,Tucson,32.22174,-110.92648,#4400BA
+Cardiff University,12134862,UK,Cardiff,51.48,-3.18,#4300BB
+University of Leicester,81089247,UK,Leicester,52.6386,-1.13169,#4200BC
+Technion Israel Institute of Technology,224964544,IL,Haifa,32.81841,34.9885,#4000BE
+University of Illinois at Urbana - Champaign,18165866,US,Urbana,40.11059,-88.20727,#3F00BF
+"University of California, Irvine",19669207,US,Irvine,33.66946,-117.82311,#3E00C0
+Korea University,1186487858,KR,Seoul,37.566,126.9784,#3D00C1
+"University of California, Santa Barbara",18105473,US,Santa Barbara,34.42083,-119.69819,#3C00C2
+Northeastern University,46477409,US,Boston,42.35843,-71.05977,#3B00C3
+Indiana University,100367386,US,Indiana,40.62146,-79.15253,#3A00C4
+Hanyang University,51478517,KR,Hanyang ,37.566,126.9784,#3800C6
+Pennsylvania State University,119376050,US,State College,40.79339,-77.86,#3700C7
+Tokyo Medical and Dental University,1152088361969963e3,JP,Giappone,35.68536,139.75309,#3600C8
+Tomsk State University,2408564130,RU,Tomsk,56.49771,84.97437,#3500C9
+Yonsei University,173679304,KR,Seoul,37.566,126.9784,#3400CA
+Texas A&M University,17237540,US,College Station,30.62798,-96.33441,#3300CB
+Weizmann Institute of Science,39958512,IL,Israel,31.5,34.75,#3200CC
+University of Wurzburg,593618061,DE,Würzburg,49.79391,9.95121,#3000CE
+State University of Campinas (Unicamp),788430113859854300,BR,Campinas,-22.90556,-47.06083,#2F00CF
+University of Erlangen Nuremberg,96097812,DE,Erlangen,49.59099,11.00783,#2E00D0
+University of York,4836947526,UK,York,53.95763,-1.08271,#2D00D1
+University of Ottawa,352311644,CA,Ottawa,45.41117,-75.69812,#2C00D2
+Tel Aviv University,790846916192002e3,IL,Tel Aviv,32.08088,34.78057,#2B00D3
+University of Tsukuba,2777744022,JP,Tsukuba,36.2,140.1,#2A00D4
+University of Gothenburg,35720969,SE,Gothenburg,57.70716,11.96679,#2800D6
+Aalto University,90345811,FI,Espoo,60.2052,24.6522,#2700D7
+University of Reading,59142515,UK,Reading,51.45625,-0.97113,#2600D8
+University of Exeter,60642183,UK,Exeter,50.7236,-3.52751,#2500D9
+University of East Anglia,26758197,UK,Norwich,52.62783,1.29834,#2400DA
+"State University of New York, Buffalo",2326061460,US,Buffalo,42.88645,-78.87837,#2300DB
+University of Ulm,48372117,DE,Ulm,48.39841,9.99155,#2200DC
+Gwangju Institute of Science and Technology,1395992863,KR,Daejeon,36.34913,127.38493,#2100DD
+Western University,20601500,CA,London,42.98339,-81.23304,#1F00DF
+University of Freiburg,148286775,DE,Freiburg,47.9959,7.85222,#1E00E0
+Universite Libre de Bruxelles,179941278,BE,Bruxelles,50.85045,4.34878,#1D00E1
+Wake Forest University,34685994,US,Winston-Salem,36.09986,-80.24422,#1C00E2
+University of Connecticut,84327770,US,Storrs,41.80843,-72.24952,#1B00E3
+"Royal Holloway, University of London",22626892,UK,Egham,51.43158,-0.55239,#1A00E4
+Temple University,36445142,US,Philadelphia,39.95233,-75.16379,#1900E5
+North Carolina State University,20683724,US,Chapel Hill,35.9132,-79.05584,#1700E7
+Aix Marseille University,593552841,FR,Marseille,43.29695,5.38107,#1600E8
+University of Aberdeen,20427406,UK,Aberdeen,57.14369,-2.09814,#1500E9
+Newcastle University,96741105,UK,Newcastle,54.97328,-1.61396,#1400EA
+Pompeu Fabra University,241191056,ES,Barcelona,41.38879,2.15899,#1300EB
+University of Pisa,419650046,IT,Pisa,43.70853,10.4036,#1200EC
+Laval University,60184668,CA,Quebec City,46.81228,-71.21454,#1100ED
+University of Montpellier,2294544162,FR,Montpellier,43.61092,3.87723,#0F00EF
+University of Padua,180753423,IT,Padova,45.40797,11.88586,#0E00F0
+Tehran University of Medical Sciences,1690582303,IR,Tehran,35.69439,51.42151,#0D00F1
+University of Hawaii,202350999,US,Honolulu,21.30694,-157.85833,#0C00F2
+University College Dublin,22132266,IE,Dublin,53.33306,-6.24889,#0B00F3
+Moscow Institute of Physics and Technology,2420128578,RU,Moscow,55.75222,37.61556,#0A00F4
+Drexel University,17809006,US,Philadelphia,39.95233,-75.16379,#0900F5
+Harbin Institute of Technology,812641495,CN,Harbin,45.75,126.65,#0700F7
+University of Surrey,19446296,UK,Guildford,51.23536,-0.57427,#0600F8
+James Cook University,16661704,AU,Douglas,-16.30965,145.28906,#0500F9
+"Indian Institute of Technology, Kharagpur",735527910,IN,Kharagpur,25.12446,86.55578,#0400FA
+Dalhousie University,42391676,CA,Halifax,44.6464,-63.57291,#0300FB
+University of Nebraska,243366276,US,Lincoln,40.8,-96.66696,#0200FC
+Universiti Teknologi Malaysia,45527356,MY,Kuala Lumpur,3.1412,101.68653,#0100FD
+St George`s University of London,160583127,UK,London,51.50853,-0.12574,#0000FF

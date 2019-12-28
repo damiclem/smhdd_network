@@ -208,7 +208,8 @@ ggplot(positions) + country_shapes +
              arrow = arrow(length = unit(0.01, "npc")))+
   geom_point(aes(x=lng, y=lat),           # draw nodes
              shape=16, color=positions$color, stroke=0.5) +    # scale for node size
-  mapcoords + maptheme
+  mapcoords +
+  maptheme
 
 
 

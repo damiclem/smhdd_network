@@ -138,6 +138,7 @@ positions %>% write_csv('data/positions.csv')
 # Get files
 friendship <- read.csv("data/friendship.csv", stringsAsFactors=FALSE)
 users <- read_csv('data/users.csv', col_types='cccccllnn') 
+positions <- read.csv("data/positions.csv", stringsAsFactors=FALSE)
 friendship$from <- as.character(friendship$from)
 friendship$to <- as.character(friendship$to)
 
@@ -182,7 +183,6 @@ edges_for_plot<- edges_for_plot[!(edges_for_plot$x==edges_for_plot$xend & edges_
 ###########
 # PLOT
 ###########
-ggmap::register_google(key = "AIzaSyD6TjSzpLffrJyQ6dl0yJulaAMKkzCodF4")
 
 # base map
 maptheme <- theme(panel.grid = element_blank()) +

@@ -5,7 +5,7 @@ id,screen_name,location,url,description,protected,verified,followers_count,frien
 18036441,Stanford,"Stanford, CA",NA,Stanford is one of the world's leading research and teaching institutions. Official Twitter feed by University Communications.,FALSE,TRUE,717198,517
 5695032,Yale,"New Haven, CT",NA,"News, events and updates from Yale University.",FALSE,TRUE,482219,280
 15460048,MIT,"Cambridge, MA",NA,The Massachusetts Institute of Technology is a world leader in research and education. Related accounts: @MITevents,FALSE,TRUE,1048486,539
-204279080,ETH_en,,NA,"This is the official Twitter account of ETH Zurich in English. Stay tuned for the latest news on research, technology and education. Deutscher Account: @eth",FALSE,TRUE,38902,405
+204279080,ETH_en,"Zürich, Switzerland",NA,"This is the official Twitter account of ETH Zurich in English. Stay tuned for the latest news on research, technology and education. Deutscher Account: @eth",FALSE,TRUE,38902,405
 248795646,Columbia,"New York, New York",NA,,FALSE,TRUE,340515,601
 33474655,Cambridge_Uni,"Cambridge, England",NA,News and events from the University of Cambridge,FALSE,TRUE,497450,1311
 48289662,UniofOxford,"Oxford, UK",NA,"Official Twitter account for the University of Oxford, one of the world's leading universities.",FALSE,TRUE,558299,1197
@@ -35,13 +35,13 @@ Email us: social@bu.edu",FALSE,TRUE,97520,22202
 18918483,UCLA,"Los Angeles, CA",NA,"Renowned for cutting-edge scientific research, arts and athletics, UCLA is a university dedicated to the health and welfare of the world. Visit https://t.co/GvuyVggQjI",FALSE,TRUE,187704,188
 108232814,postech2020,"POHANG, Republic of Korea",NA,Official Twitter of Pohang University of Science and Technology,FALSE,FALSE,1218,2142
 28421825,nyuniversity,New York,NA,The official Twitter account of New York University—in and of the city; in and of the world. Who's tweeting? https://t.co/jaRtiPTF25,FALSE,TRUE,128946,1075
-850157859065151488,PKU1898,Beijing,NA,Peking University was established in 1898. This account is dedicated to #Peking University’s global outreach and communications.,FALSE,TRUE,157933,125
+850157859065151500,PKU1898,Beijing,NA,Peking University was established in 1898. This account is dedicated to #Peking University’s global outreach and communications.,FALSE,TRUE,157933,125
 15168790,TuftsUniversity,"Medford, MA",NA,Tufts is a student-centered research university committed to helping students and faculty generate bold ideas. Retweets do not imply endorsements.,FALSE,TRUE,44205,5399
 15763818,UWMadison,"Madison, Wis.",NA,The great state University of Wisconsin should ever encourage that continual and fearless sifting and winnowing by which alone the truth can be found.,FALSE,TRUE,186054,2782
 22624441,KingsCollegeLon,"London, UK",NA,News from King's College London | King’s is a multi-faculty research-led institution & one of the top 10 UK universities in the world | Contact: comms@kcl.ac.uk,FALSE,TRUE,98334,1454
 18065266,mcgillu,"Montréal, Québec, Canada",NA,"#McGill offers the best education with excellent research and scholarly activities, in service to society. In beautiful #MTL",FALSE,TRUE,135568,5211
 20045134,WUR,"Wageningen, The Netherlands",NA,Provides education and generates knowledge with a focus on healthy food and living environment. To explore the potential of nature to improve the #QualityofLife,FALSE,TRUE,31739,818
-4748329276,pittweet,,NA,,FALSE,FALSE,4,24
+4748329276,pittweet,"Pittsburgh, PA",NA,,FALSE,FALSE,4,24
 305339576,UTokyo_News_en,Tokyo,NA,"Official Twitter account of the University of Tokyo, Japan's leading university and one of the world's top research institutions. 日本語: @UTokyo_News",FALSE,TRUE,7702,11
 16438655,EmoryUniversity,"Atlanta, GA",NA,"Official Twitter account for Emory, a private research university of international reach where courageous ideas achieve positive transformation in the world.",FALSE,TRUE,48406,683
 26267038,lunduniversity,"Lund, Sweden",NA,Lund University is the strongest research university in Sweden and ranked among the world’s top 100 universities.,FALSE,FALSE,21515,5434
@@ -58,7 +58,7 @@ Tag your tweets with #KAIST for us to retweet :-)",FALSE,FALSE,683,62
 176932593,UCBerkeley,"Berkeley, California",NA,"Official account of the University of California, Berkeley. “Bk” stands for Berkelium, one of the 16 elements discovered here.",FALSE,TRUE,178596,388
 2492619936,chalmersuniv,"Gothenburg, Sweden",NA,"Science news in English from Chalmers University of Technology in Gothenburg, Sweden. News in Swedish at @chalmersnyheter",FALSE,FALSE,1908,74
 18917572,UMNews,Minneapolis,NA,The official Twitter account of the University of Minnesota. We're #UMNdriven & #UMNproud!,FALSE,TRUE,105467,4759
-91982547,LMU_Muenchen,,NA,Offizieller Account der Ludwig-Maximilians-Universität (LMU) München #lmumünchen #universityofmunich Impressum: https://t.co/MGqvDive9k,FALSE,TRUE,20609,66
+91982547,LMU_Muenchen,"Munich, Germany",NA,Offizieller Account der Ludwig-Maximilians-Universität (LMU) München #lmumünchen #universityofmunich Impressum: https://t.co/MGqvDive9k,FALSE,TRUE,20609,66
 27103822,UW,Seattle,NA,"University of Washington students, faculty and staff believe in boundless opportunities. Do you dare to Be Boundless? At the UW, you can.",FALSE,TRUE,160728,1998
 168607383,helsinkiuni,"Helsinki, Finland",NA,"University of Helsinki - Helsingin yliopisto is Finland’s largest, oldest and internationally most esteemed research university. #HelsinkiUni #WeAreHelsinkiUni",FALSE,TRUE,36185,2031
 460255493,UZH_en,Zurich,NA,News of the University of Zurich. Deutsche Tweets: @UZH_ch,FALSE,FALSE,8342,207
@@ -71,7 +71,7 @@ Tag your tweets with #KAIST for us to retweet :-)",FALSE,FALSE,683,62
 28453440,UBC,Vancouver | Okanagan | Canada,NA,"#UBC is a global centre for research and teaching, ranked among the top 20 public universities in the world. The potential is yours.",FALSE,TRUE,56426,4411
 67260538,NUSingapore,Singapore,NA,"The National University of Singapore is Asia’s leading university with a global approach in education, research and service. (RT, links and likes ≠ endorsement)",FALSE,TRUE,32311,96
 338660808,UCSanDiego,"La Jolla, CA",NA,The official Twitter account for the University of California San Diego. Our most cherished tradition is challenging tradition.,FALSE,TRUE,36661,4351
-940938863790428160,Sorbonne_Univ_,"Parigi, Francia",NA,Compte officiel de Sorbonne Université. Une université pluridisciplinaire de recherche intensive en #lettres #medecine #sciences et #ingenierie,FALSE,FALSE,7042,471
+940938863790428200,Sorbonne_Univ_,"Parigi, Francia",NA,Compte officiel de Sorbonne Université. Une université pluridisciplinaire de recherche intensive en #lettres #medecine #sciences et #ingenierie,FALSE,FALSE,7042,471
 49567644,TU_Muenchen,"Monaco di Baviera, Baviera",NA,"Tweets from the TUM web communications team. 
 https://t.co/2UtX6LkR4u | 
 https://t.co/jnLqFukIVY | 
@@ -85,9 +85,9 @@ Impressum: http://t.co/iEyqDImXAl",FALSE,FALSE,16593,63
 20104025,Sydney_Uni,Sydney,NA,Students & researchers from all over the world unveiling new insights that change the world around us. RTs≠endorsements. CRICOS#: 00026A,FALSE,TRUE,72488,206
 3345275435,unige_en,"Ginevra, Svizzera",NA,Official account of the University of Geneva in English. UNIGE en français: @UNIGEnews,FALSE,FALSE,3274,1026
 14778782,UofR,"Rochester, NY",NA,"Official Twitter account for the University of Rochester, offering updates, news, support. Meliora: Ever Better.",FALSE,TRUE,47203,4309
-1112610624930902018,sjtu1896,Shanghai,NA,"Official page for news, stories and interesting updates from SJTU. FB page : https://t.co/pxN45nka8X Instagram : https://t.co/7EnuyB7UXX",FALSE,FALSE,317,30
+1112610624930902e3,sjtu1896,Shanghai,NA,"Official page for news, stories and interesting updates from SJTU. FB page : https://t.co/pxN45nka8X Instagram : https://t.co/7EnuyB7UXX",FALSE,FALSE,317,30
 440574690,tokyotech_en,"Ookayama, Meguro-ku, Tokyo",NA,This is the official account of Tokyo Institute of Technology (Tokyo Tech).,FALSE,FALSE,3076,1
-851622726217342977,ZJU_China,,NA,https://t.co/PMjgZzqguS,FALSE,FALSE,1371,197
+851622726217343e3,ZJU_China,"Hangzhou, China",NA,https://t.co/PMjgZzqguS,FALSE,FALSE,1371,197
 19809471,USC,"Los Angeles, CA",NA,The official Twitter account of the University of Southern California. #USC | #FightOn! Instagram: USCedu,FALSE,TRUE,150825,3270
 24723695,BristolUni,"Bristol, England",NA,Top 10 UK Uni 📚 Leading research 🔬 World-class teaching 👩‍🎓 Vibrant city 🙌,FALSE,FALSE,82090,567
 286768601,FudanUniversity,"shanghai, China",NA,,FALSE,FALSE,2118,69
@@ -135,7 +135,7 @@ CRICOS Code 00025B",FALSE,TRUE,82045,2198
 
 CRICOS Provider no. 00098G",FALSE,TRUE,50234,1340
 259982093,msu_ru,"Moscow, Russia",NA,#Lomonosov #MSU #Alumni club | Moscow State University | #МГУ | Московский Государственный Университет им. М.В. Ломоносова press.msu(at)yandex.ru,FALSE,FALSE,5829,4647
-928098400980975616,CUHKofficial,"Sha Tin District, Hong Kong",NA,The official twitter account for The Chinese University of Hong Kong - CUHK FB@CUHKofficial IG@thechineseuniversityofhongkong YouTube@CUHKchannel,FALSE,TRUE,3446,530
+928098400980975600,CUHKofficial,"Sha Tin District, Hong Kong",NA,The official twitter account for The Chinese University of Hong Kong - CUHK FB@CUHKofficial IG@thechineseuniversityofhongkong YouTube@CUHKchannel,FALSE,TRUE,3446,530
 54480908,HebrewU,Jerusalem,NA,"Israel's leading academic and research institution, serving 23,500 students from 85 countries.",FALSE,TRUE,17641,2293
 16129880,UofMaryland,"College Park, MD",NA,"3 Nobel laureates, 3 Pulitzer recipients, scores of Fulbright scholars, one cute turtle and a bike ride away from our nation's capital! RTs ≠ endorsements.",FALSE,TRUE,96492,1330
 19910826,univofstandrews,St Andrews,NA,"University of St Andrews - Scotland's first university. 
@@ -145,21 +145,21 @@ UK University of the Year 2020 (Times and Sunday Times Good University Guide 202
 33535466,univgroningen,"Broerstraat 5, Groningen, NL",NA,Official Twitter of the University of Groningen (Rijksuniversiteit Groningen) in the Netherlands. Open academic community since 1614. Tweets ENG&NL. ❤️≠support,FALSE,FALSE,54094,1780
 2152668890,FU_Berlin,Berlin,NA,Offizieller Twitter-Account der Freien Universität Berlin. Tweets aus der Zentralen Online-Redaktion. Impressum: https://t.co/ix7etID84a,FALSE,TRUE,16982,727
 18903739,LivUni,"Liverpool, UK",NA,One of the UK’s leading research institutions and a centre of world-class teaching and learning. Tweeting weekdays 9am-5pm. #LivOriginal,FALSE,FALSE,61892,795
-871618430192951296,NanjingUnivers1,"Nanjing,China",NA,"Official Twitter account for the Nanjing University, one of the world's famous universities.",FALSE,FALSE,110,66
+871618430192951300,NanjingUnivers1,"Nanjing,China",NA,"Official Twitter account for the Nanjing University, one of the world's famous universities.",FALSE,FALSE,110,66
 928008620,RWTH,"Aachen, Germany",NA,Das offizielle Twitter-Profil der RWTH Aachen University. Impressum: https://t.co/UZFYkA8Q8d,FALSE,TRUE,15025,369
 57709461,McMasterU,"Hamilton, ON",NA,News and updates from McMaster University.,FALSE,TRUE,63885,325
 16809022,UCalgary,"Calgary, Canada",NA,Official Twitter account of the University of Calgary. #UCalgary #UCalgaryLife #exploreUCalgary,FALSE,TRUE,55635,743
 14748679,UUtah,"Salt Lake City, Utah",NA,"Nestled between the foothills of the Wasatch Mountains & Salt Lake City, the University of Utah excels at research, innovation & student success.",FALSE,TRUE,113127,2341
 15926727,MonashUni,"Melbourne, Australia",NA,"Official Twitter of Monash University. 
 CRICOS number 00008C",FALSE,TRUE,71338,1422
-215243976,q_nationaltaiwa,,NA,National Taiwan University,FALSE,FALSE,51,0
+215243976,q_nationaltaiwa,"Taipei, Taiwan",NA,National Taiwan University,FALSE,FALSE,51,0
 81070376,CityUHongKong,Hong Kong,NA,,FALSE,FALSE,3076,22
 277391629,durham_uni,Regno Unito,NA,"A leading UK university. We offer the inspiration, you achieve the outstanding. We will be back monitoring the account on 2nd Jan! #DUinspire",FALSE,TRUE,46924,2303
 28120277,Tulane,"New Orleans, LA",NA,The official Twitter account for Tulane University 🌊 Join the conversation: #Tulane | #RollWave,FALSE,FALSE,29182,498
-941236085778276352,BathAstronomers,,NA,,FALSE,FALSE,61,77
+941236085778276400,BathAstronomers,"Bath, UK",NA,,FALSE,FALSE,61,77
 91110697,KITKarlsruhe,Karlsruhe/Germany,NA,Offizieller Account des Karlsruher Instituts für Technologie (KIT). Impressum: https://t.co/gPra9nXpgC. Datenschutz: https://t.co/Wz8PLcuTNJ,FALSE,TRUE,25555,1074
 14534931,uiowa,"Iowa City, IA",NA,"Official University of Iowa account. With more than 200 areas of study, the University of Iowa enrolls 30,000+ students and offers many top-ranked programs.",FALSE,TRUE,114557,696
-83761255,NagoyaUniv,,NA,,FALSE,FALSE,270,0
+83761255,NagoyaUniv,"Nagoya, Japan",NA,,FALSE,FALSE,270,0
 22742520,uwanews,"Perth, Western Australia",NA,The University of Western Australia - a World Top 100 University. Find an expert: https://t.co/LdCvAhH4mz Tag: #UWA,FALSE,TRUE,18643,2755
 146074105,tudresden_de,Dresden,NA,"Technische Universität Dresden
 Impressum: http://t.co/YYSf2zq4",FALSE,FALSE,11825,218
@@ -181,10 +181,10 @@ Impressum: http://t.co/YYSf2zq4",FALSE,FALSE,11825,218
 21084942,UniCologne,Köln,NA,#UniKöln: Universität mit internationalem Flair // Cologne: University with International Appeal,FALSE,FALSE,40068,1267
 821364216,unimalaya,Malaysia,NA,"See also: https://t.co/ftigzWqWtC
 https://t.co/pVehGM6l3O",FALSE,FALSE,16349,297
-1046683139718991872,UMephi,"Mosca, Russia",NA,Official account of the National Research Nuclear University MEPhI #MEPHI,FALSE,FALSE,131,115
+1046683139718991900,UMephi,"Mosca, Russia",NA,Official account of the National Research Nuclear University MEPhI #MEPHI,FALSE,FALSE,131,115
 28147271,coschoolofmines,"Golden, CO",NA,"Official account of Colorado School of Mines, a public research university preparing students to solve energy & environmental challenges #helluvaengineer",FALSE,TRUE,14298,1088
 29513379,WesternColoU,"Gunnison, Colorado",NA,"The official Twitter account of Western Colorado University, sharing news, events and information about life in Gunnison Valley. #DiscoverWestern #WesternProud",FALSE,FALSE,4016,442
-1162109050227699717,KUnews,"Lawrence, Kansas",NA,The University of Kansas News Service is a unit of experienced journalists combing Mount Oread for compelling stories of research and scholarship.,FALSE,FALSE,414,88
+1162109050227699700,KUnews,"Lawrence, Kansas",NA,The University of Kansas News Service is a unit of experienced journalists combing Mount Oread for compelling stories of research and scholarship.,FALSE,FALSE,414,88
 24677217,WWU_Muenster,Münster,NA,"Online-Redaktion der Uni Münster bei Twitter: Johannes Sträßer, Peter Wichmann; Impressum: https://t.co/WDWjfiwrPf
 Datenschutzhinweis: https://t.co/EYQHt2X81l",FALSE,FALSE,14904,1695
 19341622,sheffielduni,"Sheffield, UK",NA,Top 5 UK university for best student experience and top UK students' union for 10 consecutive years - THE Student Experience Survey,FALSE,TRUE,120370,4832
@@ -206,17 +206,17 @@ so you can use it to find your alumni",FALSE,FALSE,867,418
 100367386,IndianaUniv,Indiana,NA,"Established in 1820, Indiana University has 7 campuses: @IUBloomington, @IUEast, @IUKokomo, @IUNorthwest, @IUPUI, @IUSouthBend, and @IUSoutheast.",FALSE,TRUE,76234,458
 51478517,i_hanyang,서울/안산,NA,한양대 인터넷한양 뉴스팀,FALSE,FALSE,3680,2865
 119376050,penn_state,"University Park, PA",NA,"We are one community, impacting many. We Are Penn State. Welcome to #PennState's official Twitter account. Share your photos with us using #MyPennState.",FALSE,TRUE,210125,1024
-1152088361969963009,TMDUniversity,Giappone,NA,"Cultivating Professionals withKnowledge and Humanity, thereby Contributing to People’s Well-being",FALSE,FALSE,46,37
+1152088361969963e3,TMDUniversity,Giappone,NA,"Cultivating Professionals withKnowledge and Humanity, thereby Contributing to People’s Well-being",FALSE,FALSE,46,37
 2408564130,TomskUni,"36 Lenin Ave.,Tomsk, Russia",NA,The official page of Tomsk State University,FALSE,FALSE,581,55
 173679304,yonsei_u,"Seoul, Republic of Korea",NA,"Being the oldest private university in Korea, Yonsei University was first established in 1885 by Christian missionaries in the spirit of “truth and freedom.”",FALSE,FALSE,1502,13
 17237540,TAMU,"College Station, TX",NA,The official Twitter account for Texas A&M University! #tamu #12thMan #BeFearless,FALSE,TRUE,275564,1953
 39958512,WeizmannScience,Israel,NA,One of the world's top-ranking multidisciplinary research institutions. Noted for its wide-ranging exploration of the natural and exact sciences,FALSE,FALSE,8524,211
 593618061,Uni_WUE,Würzburg,NA,1402 erstmals gegründet. 1582 erneut. Seitdem dauerhaft am Leben! Impressum: https://t.co/PDFwpZsQVL,FALSE,FALSE,4594,566
-788430113859854336,unicampoficial,"Campinas, Brasil",NA,Perfil oficial da Universidade Estadual de Campinas.,FALSE,FALSE,6585,15
+788430113859854300,unicampoficial,"Campinas, Brasil",NA,Perfil oficial da Universidade Estadual de Campinas.,FALSE,FALSE,6585,15
 96097812,UniFAU,"Erlangen, Nürnberg",NA,"Veranstaltungen, Termine und News rund um die Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU). Unser lmpressum: https://t.co/7goSHfvLUN",FALSE,FALSE,6562,639
 4836947526,yorkuniversity,"Toronto, Ontario",NA,The official Twitter account of York University. Open your mind to new ways of thinking and endless possibilities. #YorkU,FALSE,TRUE,12334,1083
 352311644,uOttawa,"Ottawa, Ontario, Canada",NA,L’Université d'Ottawa | University of Ottawa | 💭 @uottawafuture  | 🎒 @uocampus  | 🎓 @uottawaalumni |  🐴 @uottawageegees | 📸 #uOttawa,FALSE,TRUE,29023,354
-790846916192002048,TelAvivUni,"Tel Aviv, Israel",NA,"Be Part of the Next Big Idea. World's 8ᵗʰ in graduate billion $ #Startups, 48ᵗʰ in patents granted, top 100 in #Innovation, Pursuing the Unknown  📚 🔬  ⚕ 🔭 🎼  💻",FALSE,TRUE,4554,1695
+790846916192002e3,TelAvivUni,"Tel Aviv, Israel",NA,"Be Part of the Next Big Idea. World's 8ᵗʰ in graduate billion $ #Startups, 48ᵗʰ in patents granted, top 100 in #Innovation, Pursuing the Unknown  📚 🔬  ⚕ 🔭 🎼  💻",FALSE,TRUE,4554,1695
 2777744022,UofTsukuba,"Tsukuba, Japan",NA,"With over 130 years of history, the University of Tsukuba has a long and proud history as one of Japan's premier educational institutions.",FALSE,FALSE,387,0
 35720969,uniofgothenburg,"Gothenburg, Sweden",NA,"We are merging our two twitter accounts. Please unfollow 
 @uniofgothenburg and follow @goteborgsuni where we from now on will tweet in both English and Swedish.",FALSE,FALSE,7488,1

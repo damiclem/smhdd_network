@@ -41,3 +41,6 @@ vignettes/*.pdf
 # Authentication file
 auth.json
 
+# Trained models
+data/models/*
+

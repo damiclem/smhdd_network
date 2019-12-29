@@ -57,7 +57,7 @@ users <- users %>%
   add_column(degree=degree(net.full))
 # Get users which have no friends (i.e. overall degree 0)
 v.isolated <- which(degree(net.full) < 1)
-v.isolated
+str(v.isolated)
 
 # Remove isolated vertices
 net = delete_vertices(net.full, v.isolated)
@@ -310,8 +310,8 @@ rgm.gen(Y, p.mle)
 rce.stat <- function(socio.matrix) {
   # Compute standard error for out- and in- degree
   rgm.out <- rgm.stat(socio.matrix)
-  out.std.error <- rgm.out[1]
-  in.std.error <- rgm.out[2]
+  out.std.error <- rgm.out[2]
+  in.std.error <- rgm.out[1]
   # Add mutual dyads (useful for independecy of y variables evaluation)
   conc <- (socio.matrix == t(socio.matrix))
   mu.dy <- sum(conc[socio.matrix == 1], na.rm=T) / 2
@@ -392,10 +392,13 @@ ggplot(data=NULL, aes(x=rce.boot$t[, 3], y=..density.., fill=1)) +
 #          0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1,
 #          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1) # 196 messo 1 e tolto uno zero in fondo dopo aver visto socio.matrix
 # Define if a university is in the US
+
 country <- (users %>% select(country) %>% pull)
 is_usa <- !is.na(country) & country == 'US'
 # Define ranking
 ranking <- c(rep('top25', 25), rep('top50', 25), rep('top100', 50), rep('top225', 223 - (25 + 25 + 50)))
+
+
 # Define number of followers
 followers <- users %>% select(followers_count) %>% pull
 # Define number of friends
@@ -404,20 +407,26 @@ friends <- users %>% select(friends_count) %>% pull
 verified <- users %>% select(verified) %>% pull
 
 # cbind(rownames(socio.matrix), usa)         
-#rankA <- c(rep(1,15),rep(0,184))
-#rankB <- c(rep(0,15),rep(1,35),rep(0,199-50))
-#rankC <- c( rep(0,50), rep(1,50), rep(0,99))
-#rankD <- c( rep(0,100),rep(1,99))
+rankA <- c(rep(1,25),rep(0,200))
+rankB <- c(rep(0,25),rep(1,25),rep(0,175))
+rankC <- c( rep(0,50), rep(1,50), rep(0,125))
+rankD <- c( rep(0,100),rep(1,125))
 
 # New network object
-ergm.net <- as.network(socio.matrix)
+ergm.net <- as.network(socio.matrix[-v.isolated,-v.isolated])
 diag(socio.matrix) <- NA
-set.vertex.attribute(ergm.net, 'is_usa', is_usa)
-set.vertex.attribute(ergm.net, 'ranking', ranking)
-set.vertex.attribute(ergm.net, 'followers', followers)
-set.vertex.attribute(ergm.net, 'friends', friends)
-set.vertex.attribute(ergm.net, 'verified', verified)
+set.vertex.attribute(ergm.net, 'is_usa', is_usa[-v.isolated])
+set.vertex.attribute(ergm.net, 'ranking', ranking[-v.isolated])
+set.vertex.attribute(ergm.net, 'followers', followers[-v.isolated])
+set.vertex.attribute(ergm.net, 'friends', friends[-v.isolated])
+set.vertex.attribute(ergm.net, 'verified', verified[-v.isolated])
+set.vertex.attribute(ergm.net, 'ranking', ranking[-v.isolated])
 
+# creo anche questi perchè vado meglio a capire che contrasti fare
+set.vertex.attribute(ergm.net, 'rank25', rankA[-v.isolated])
+set.vertex.attribute(ergm.net, 'rank50', rankB[-v.isolated])
+set.vertex.attribute(ergm.net, 'rank100', rankC[-v.isolated])
+set.vertex.attribute(ergm.net, 'rank225', rankD[-v.isolated])
 
 # Fit ergm equivalent to logistic regression (independece of y)
 fit.ergm.0 <- ergm(ergm.net ~ edges)
@@ -425,7 +434,7 @@ fit.ergm.0 <- ergm(ergm.net ~ edges)
 summary(fit.ergm.0)
 
 # Fit new ergm model
-fit.ergm.1 <- ergm(ergm.net ~ edges + nodeocov('is_usa') + nodeicov('is_usa') +
+fit.ergm.1 <- ergm(ergm.net ~ edges + nodeofactor('is_usa') + nodeifactor('is_usa') +
                      nodeofactor('ranking', levels=c('top25', 'top50', 'top100')) +
                      nodeifactor('ranking', levels=c('top25', 'top50', 'top100')) +
                      nodematch('is_usa') + nodematch('ranking'))
@@ -455,14 +464,9 @@ summary(fit.ergm.4) # AIC: 25547
 fit.ergm.5 <- ergm(ergm.net ~ edges + mutual)
 summary(fit.ergm.5) # AIC: 21757
 
-fit.ergm.6 <- ergm(ergm.net ~ edges + mutual + nodeocov('is_usa') + nodeicov('is_usa') +
-                     nodematch('is_usa') + diff('ranking', pow=1, sign.action='identity'))
-summary(fit.ergm.6) # AIC
-# Save the model
-save(fit.ergm.6, file='data/models/ergm_6')
-
-fit.ergm.7 <- ergm(ergm.net ~ edges + mutual +
-                   nodeocov('is_usa') + nodeicov('is_usa') + nodematch('is_usa') +
+# Best model at this time
+fit.ergm.6 <- ergm(ergm.net ~ edges + mutual +
+                   nodeofactor('is_usa') + nodeifactor('is_usa') + nodematch('is_usa') +
                    nodeocov('friends') + nodeicov('friends') +
                    nodeocov('followers') + nodeicov('followers') +
                    nodeocov('verified') + nodeicov('verified') + nodematch('verified') +
@@ -470,9 +474,9 @@ fit.ergm.7 <- ergm(ergm.net ~ edges + mutual +
                    nodeifactor('ranking', levels=c('top25', 'top50', 'top100')) +
                    nodemix('ranking', levels=c('top25', 'top50', 'top100')),
                    control = control.ergm(MCMLE.maxit = 30))
-summary(fit.ergm.7) # AIC
+summary(fit.ergm.6) # AIC
 # Save model to disk
-save(fit.ergm.7, file='data/models/ergm_7')
+save(fit.ergm.6, file='data/models/ergm_6')
 
 # Search for a relationship between ranking, outdegree and indegree
 # Add ranking attribute to user
@@ -514,18 +518,19 @@ outliers
 # commento outdegree: ? evidente come vi sia circa un 25% di ossservazioni anomale
 # va indagato il perch?
 
-fit.ergm.8 <- ergm(ergm.net ~ edges + mutual + sender(nodes=outliers)
+fit.ergm.7 <- ergm(ergm.net ~ edges + mutual+
                  + nodeocov('is_usa') + nodeicov('is_usa') + nodematch('is_usa')
                  + nodeocov('friends') + nodeicov('friends')
                  + nodeocov('followers') + nodeicov('followers')
                  + nodeocov('verified') + nodeicov('verified') + nodematch('verified')
-                 + nodeofactor('ranking', levels=c('top25', 'top50', 'top100')) 
-                 + nodeifactor('ranking', levels=c('top25', 'top50', 'top100'))
-                 + nodemix('ranking',levels=c('top25','top50','top100')),
-                 control = control.ergm(MCMLE.maxit = 60)
+                 + nodeocov('rank25') + nodeicov('rank25')+nodematch('rank25', levels=1)
+                 + nodeocov('rank50') + nodeicov('rank50')+nodematch('rank50', levels=1)
+                 + nodeocov('rank100') + nodeicov('rank100')+nodematch('rank100', levels=1)
+                 + nodematch('rank225', levels=1),
+                 control = control.ergm(MCMLE.maxit = 30,MCMC.samplesize = 2048)
 )
 # AIC: 
-summary(fit.ergm8)
+summary(fit.ergm.7)
 
 # Commento del modello
 # Questo modello sembra il migliore e offre anche delle interpretazioni interessanti
@@ -545,7 +550,7 @@ ergm.gen <- function(socio.matrix, fit) {
 # Faccio il bootstrap parametrico utilizzando la funzione boot
 R <- 10 # Number of replicates
 ergm.boot <- boot(data=socio.matrix, statistic=rce.stat, R=R, sim='parametric', ran.gen = ergm.gen, mle=fit.ergm.7)
-ergm.boot$t
+ergm.boot$t0
 # Save the model to disk
 save(ergm.boot, file='data/models/ergm_bootstrap')
 # i warnigns erano previsti
@@ -581,3 +586,4 @@ ggplot(data=NULL, aes(x=ergm.boot$t[, 3], y=..density.., fill=1)) +
        x='Bootstrapped coefficients', y='Density')
 # Commento: 
 # In realt? il risultato ? ancora abbastanza insoddisfacente in outdegree e indegree
+

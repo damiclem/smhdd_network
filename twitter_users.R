@@ -50,7 +50,9 @@ users <- tibble(
   protected=logical(),
   verified=logical(),
   followers_count=numeric(),
-  friends_count=numeric()
+  friends_count=numeric(),
+  n_posts=numeric(),
+  language=character()
 )
 
 # Retrieve users info from their screen name through the Twitter APIs
@@ -91,7 +93,9 @@ for (i in 1:length(users.batches)) {
       protected=as.logical(curr.user$protected),
       verified=as.logical(curr.user$verified),
       followers_count=as.numeric(curr.user$followers_count),
-      friends_count=as.numeric(curr.user$friends_count)
+      friends_count=as.numeric(curr.user$friends_count),
+      n_posts=as.numeric(curr.user$statuses_count),
+      language=curr.user$status$lang
     )
   }
 }

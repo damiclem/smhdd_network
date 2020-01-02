@@ -3,6 +3,7 @@ library(data.table)
 library(purrr)
 library(geonames)
 library(gridExtra)
+library(igraph)
 
 # Filling missing location (now useless, already filled)
 ##############################
@@ -13,13 +14,12 @@ a<- users[users$location=="",]
 a
 
 # filling missing location
-users[users$screen_name=="ETH_en","location"] <- "Zürich, Switzerland"
-users[users$screen_name=="pittweet","location"] <- "Pittsburgh, PA"
-users[users$screen_name=="LMU_Muenchen","location"] <- "Munich, Germany"
-users[users$screen_name=="ZJU_China","location"] <- "Hangzhou, China"
-users[users$screen_name=="q_nationaltaiwa","location"] <- "Taipei, Taiwan"
-users[users$screen_name=="BathAstronomers","location"] <- "Bath, UK"
-users[users$screen_name=="NagoyaUniv","location"] <- "Nagoya, Japan"
+users[users$rank==7,"location"] <- "Zürich, Switzerland"
+users[users$rank==42,"location"] <- "Tokyo"
+users[users$rank==55,"location"] <- "Munich, Germany"
+users[users$rank==76,"location"] <- "Hangzhou, China"
+users[users$rank==134,"location"] <- "Barcelona"
+users[users$rank==137,"location"] <- "Nagoya, Japan"
 
 # saving results
 users %>% write_csv('data/users.csv')
@@ -28,12 +28,11 @@ users %>% write_csv('data/users.csv')
 
 # Retrieve data
 users <- read.csv("data/users.csv", stringsAsFactors=FALSE)
-rankings_clean <- read.csv("data/rankings_clean.csv", stringsAsFactors=FALSE)
 
 # Create dataframe with Universities, IDs, Locations and Countries
-positions <- data.frame(university=rankings_clean[,"university"])
+positions <- data.frame(university=users[,"university"])
 positions$id <- users$id
-positions$country <- rankings_clean$country
+positions$country <- users$country
 positions$location <- users$location
 
 # Keeping only City
@@ -51,6 +50,8 @@ positions[66,"location"] <-"Paris"
 positions[67,"location"] <-"Munich"
 positions[72,"location"] <-"Geneva"
 positions[79,"location"] <-"Shangai"
+positions[86,"location"] <-"Hefei"
+positions[97,"location"] <-"Lyon"
 positions[108,"location"] <-"Paris"
 positions[112,"location"] <-"São Paulo"
 positions[116,"location"] <-"Hong Kong"
@@ -62,11 +63,12 @@ positions[144,"location"] <-"Yokohama"
 positions[149,"location"] <-"New York"
 positions[156,"location"] <-"Kuala Lumpur"
 positions[157,"location"] <-"Moscow"
+positions[160,"location"] <-"Lawrence"
 positions[167,"location"] <-"Leicester"
 positions[175,"location"] <-"Hanyang "
 positions[176,"location"] <-"State College"
 positions[178,"location"] <-"Tomsk"
-positions[185,"location"] <-"York"
+positions[184,"location"] <-"Nuremberg"
 positions[190,"location"] <-"Espoo"
 positions[215,"location"] <-"Dublin"
 positions[216,"location"] <-"Moscow"
@@ -117,9 +119,11 @@ positions$lng <- rep(0,225)
 options(geonamesUsername = "scarpa")
 for (i in 1:225){
   print(i)
-  temp <-GNsearch(name_equals = positions[i,"location"], country=positions[i, "country"])
-  positions[i,"lat"] <- temp[1,"lat"]
-  positions[i,"lng"] <- temp[1,"lng"]
+  if (!is.na(positions[i,"id"])){
+    temp <-GNsearch(name_equals = positions[i,"location"], country=positions[i, "country"])
+    positions[i,"lat"] <- temp[1,"lat"]
+    positions[i,"lng"] <- temp[1,"lng"]
+  }
 }
 
 # Add colors
@@ -137,10 +141,8 @@ positions %>% write_csv('data/positions.csv')
 ##############
 # Get files
 friendship <- read.csv("data/friendship.csv", stringsAsFactors=FALSE)
-users <- read_csv('data/users.csv', col_types='cccccllnn') 
+users <- read.csv('data/users.csv', stringsAsFactors=FALSE) 
 positions <- read.csv("data/positions.csv", stringsAsFactors=FALSE)
-friendship$from <- as.character(friendship$from)
-friendship$to <- as.character(friendship$to)
 
 # Add 'from' user info
 friendship <- users %>% 
@@ -158,14 +160,11 @@ friendship <- friendship %>%
 friendship <- friendship %>% distinct()
 
 
-# tocca rimuovere una di quelle con lo stesso account, altrimenti non va
-positions <- positions %>% distinct(id, .keep_all = TRUE)
-
 # creating graph object
 g <- graph_from_data_frame(friendship, directed = TRUE, vertices = positions$id)
 
 # coverting id to char
-positions$id <- as.character(positions$id)
+positions$id <- as.numeric(positions$id)
 
 # getting positions for the edges
 edges_for_plot <- friendship %>%

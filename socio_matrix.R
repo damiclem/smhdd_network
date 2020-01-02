@@ -2,7 +2,7 @@
 library(tidyverse)
 
 # Load datasets
-users <- read_csv('data/users.csv', col_types='cccccllnn')
+users <- read_csv('data/users.csv', col_types='ncncccnclcnnn')
 friendship <- read_csv('data/friendship.csv', col_types='cc')
 
 # Get all available universities

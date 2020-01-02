@@ -45,13 +45,16 @@ auth.bearer_token <- req.auth(auth.api_key, auth.api_secret_key)
 
 # Retrieve users table
 users <- read_csv('data/users.csv', col_types=cols(
-    id=col_character(),
-    screen_name=col_character(),
+    rank=col_number(),
+    university=col_character(),
+    score=col_number(),
+    country=col_character(),
     location=col_character(),
-    # url=col_character(),
-    description=col_character(),
-    protected=col_logical(),
+    twitter_name=col_character(),
+    id=col_character(),
+    language=col_character(),
     verified=col_logical(),
+    n_posts=col_number(),
     followers_count=col_number(),
     friends_count=col_number()
 ))
@@ -156,5 +159,4 @@ while(TRUE) {
 
 # Save friendship table to disk
 friendship %>% write_csv('data/friendship.csv')
-
 

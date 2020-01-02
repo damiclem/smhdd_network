@@ -1,0 +1,226 @@
+rank,university,score,country,twitter_name
+1,Harvard University,100,USA,Harvard
+2,California Institute of Technology (Caltech),98.137,USA,Caltech
+3,Imperial College London,97.706,UK,imperialcollege
+4,Stanford University,97.604,USA,Stanford
+5,Yale University,97.506,USA,Yale
+6,Massachusetts Institute of Technology (MIT),97.364,USA,MIT
+7,ETH Zurich (Swiss Federal Institute of Technology),96.187,Switzerland,ETH_en
+8,Columbia University,95.393,USA,Columbia
+9,University of Cambridge,95.258,UK,Cambridge_Uni
+10,University of Oxford,94.989,UK,UniofOxford
+11,University of Chicago,94.712,USA,UChicago
+12,Karolinska Institute,94.642,Sweden,karolinskainst
+13,Johns Hopkins University,94.299,USA,JohnsHopkins
+14,University College London,94.172,UK,ucl
+15,Northwestern University,94.117,USA,NorthwesternU
+16,Princeton University,93.993,USA,Princeton
+17,Ecole Polytechnique Federale de Lausanne,93.75,Switzerland,EPFL
+18,University of Pennsylvania,93.525,USA,Penn
+19,Cornell University,92.271,USA,Cornell
+20,Washington University in St. Louis,91.325,USA,WUSTL
+21,Carnegie Mellon University,90.608,USA,CarnegieMellon
+22,Scuola Normale Superiore di Pisa,90.345,Italy,scuolanormale
+23,Case Western Reserve University,90.314,USA,cwru
+24,University of Michigan,89.447,USA,UMich
+25,Boston University,89.443,USA,BU_Tweets
+26,Brown University,89.043,USA,BrownUniversity
+27,Technical University of Denmark,88.842,Denmark,DTUtweet
+28,Seoul National University,88.52,Republic of Korea,SNUnow
+29,Rice University,88.292,USA,RiceUniversity
+30,Royal Institute of Technology (KTH),88.173,Sweden,KTHuniversity
+31,University of Edinburgh,87.837,UK,EdinburghUni
+32,"University of California, Los Angeles",87.674,USA,UCLA
+33,Pohang University of Science and Technology,87.159,Republic of Korea,postech2020
+34,New York University,86.848,USA,nyuniversity
+35,Peking University,86.74,China,PKU1898
+36,Tufts University,86.468,USA,TuftsUniversity
+37,University of Wisconsin - Madison,86.418,USA,UWMadison
+38,King`s College London,86.399,UK,KingsCollegeLon
+39,McGill University,86.373,Canada,mcgillu
+40,Wageningen University and Research Center,86.116,Netherlands,WUR
+42,University of Pittsburgh,86.051,USA,PittTweet
+42,University of Tokyo,86.051,Japan,UTokyo_News_en
+43,Emory University,85.995,USA,EmoryUniversity
+44,Lund University,85.692,Sweden,lunduniversity
+45,Australian National University,85.664,Australia,ANUmedia
+46,Tsinghua University,85.557,China,Tsinghua_Uni
+47,University of Bern,85.365,Switzerland,unibern
+48,Korea Advanced Institute of Science and Technology (KAIST),85.287,Republic of Korea,kaistpr
+49,Vanderbilt University,85.054,USA,VanderbiltU
+50,University of Lausanne,85,Switzerland,unil
+51,University of Twente,84.63,Netherlands,UTwente
+52,"University of California, Berkeley",84.502,USA,UCBerkeley
+53,Chalmers University of Technology,84.156,Sweden,chalmersuniv
+54,University of Minnesota,84.15,USA,UMNews
+55,Ludwig Maximilian University of Munich,84.048,Germany,LMU_Muenchen
+56,University of Washington,83.76,USA,UW
+57,University of Helsinki,83.736,Finland,helsinkiuni
+58,University of Zurich,83.631,Switzerland,UZH_ch
+59,University of Toronto,83.556,Canada,UofT
+60,Nanyang Technological University,83.252,Singapore,NTUsg
+61,University of Southampton,83.011,UK,unisouthampton
+62,University of Manchester,82.985,UK,OfficialUoM
+63,University of British Columbia,82.932,Canada,UBC
+64,National University of Singapore,82.807,Singapore,NUSingapore
+65,"University of California, San Diego",82.757,USA,UCSanDiego
+66,Pierre and Marie Curie University (Sorbonne University),82.696,France,Sorbonne_Univ_
+67,Technical University of Munich,82.65,Germany,TU_Muenchen
+68,"University of California, Davis",82.631,USA,ucdavis
+69,University of North Carolina,82.383,USA,UNC
+70,Ruprecht Karl University of Heidelberg,82.378,Germany,UniHeidelberg
+71,University of Sydney,82.279,Australia,Sydney_Uni
+72,University of Geneva,82.265,Switzerland,UNIGEnews
+73,University of Rochester,82.221,USA,UofR
+74,Shanghai Jiao Tong University,82.177,China,sjtu1896
+75,Tokyo Institute of Technology,82.082,Japan,tokyotech_en
+76,Zhejiang University,82.035,China,ZJU_China
+77,University of Southern California,81.955,USA,USC
+78,University of Bristol,81.943,UK,BristolUni
+79,Fudan University,81.689,China,FudanUniversity
+80,Kyoto University,81.609,Japan,KyotoU_News
+81,University of Alabama Birmingham,81.481,USA,UABNews
+82,University of Illinois at Chicago,81.453,USA,thisisUIC
+83,Georgetown University,81.444,USA,Georgetown
+84,Indian Institute of Science,81.393,India,iiscbangalore
+85,Dartmouth College,81.289,USA,dartmouth
+86,University of Science and Technology of China,81.222,China,ustc
+87,Erasmus University Rotterdam,80.873,Netherlands,erasmusuni
+88,University of Melbourne,80.78,Australia,unimelb
+89,Georgia Institute of Technology,80.388,USA,GeorgiaTech
+90,London School of Economics and Political Science,80.368,UK,LSEnews
+91,University of Birmingham,80.332,UK,unibirmingham
+92,George Washington University,80.317,USA,GWtweets
+93,Rutgers the State University of New Jersey,80.311,USA,RutgersU
+94,Ohio State University,80.263,USA,OhioState
+95,University of Gottingen,80.149,Germany,uniGoettingen
+96,Swedish University of Agricultural Sciences,80.134,Sweden,_SLU
+97,"Ecole Normale Superieure, Lyon",79.992,France,ENSdeLyon
+98,Radboud University Nijmegen,79.739,Netherlands,Radboud_Uni
+99,Tohoku University,79.661,Japan,TohokuUniPR
+100,Utrecht University,79.582,Netherlands,UtrechtUni
+101,University of Florida,79.524,USA,UF
+102,University of Bergen,79.35,Norway,UiB
+103,University of Miami,79.337,USA,univmiami
+104,Purdue University,79.095,USA,LifeAtPurdue
+105,University of Queensland Australia,79.084,Australia,UQ_News
+106,University of Notre Dame,79.059,USA,NotreDame
+107,Osaka University,79.011,Japan,osaka_univ_e
+108,"National Graduate School of Engineering, Paris",78.997,France,MINES_ParisTech
+109,University of Warwick,78.632,UK,warwickuni
+110,Medical University of Vienna,78.561,Austria,MedUni_Wien
+111,Michigan State University,78.461,USA,michiganstateu
+112,University of Sao Paulo,78.389,Brazil,usponline
+113,Universite de Montreal,78.315,Canada,UMontreal
+114,University of New South Wales,78.178,Australia,UNSW
+115,Lomonosov Moscow State University,78.053,Russia,MSU_1755
+116,Chinese University Hong Kong,77.994,Hong Kong,CUHKofficial
+117,Hebrew University of Jerusalem,77.946,Israel,HebrewU
+118,"University of Maryland, College Park",77.807,USA,UofMaryland
+119,University of St. Andrews,77.803,UK,univofstandrews
+120,Aarhus University,77.767,Denmark,AarhusUni
+121,University of Groningen,77.655,Netherlands,univgroningen
+122,Free University of Berlin,77.412,Germany,FU_Berlin
+123,University of Liverpool,77.341,UK,LivUni
+124,Nanjing University,77.301,China,NA
+125,RWTH Aachen University,77.27,Germany,RWTH
+126,McMaster University,77.197,Canada,McMasterU
+127,University of Calgary,76.913,Canada,UCalgary
+128,University of Utah,76.614,USA,UUtah
+129,Monash University,76.6,Australia,MonashUni
+130,National Taiwan University,76.55,Taiwan,NA
+131,City University of Hong Kong,76.451,Hong Kong,CityUHongKong
+132,Durham University,76.447,UK,durham_uni
+133,Tulane University,76.373,USA,Tulane
+134,Autonomous University of Barcelona,76.296,Spain,UABBarcelona
+135,Karlsruhe Institute of Technology,76.295,Germany,KITKarlsruhe
+136,University of Iowa,76.175,USA,uiowa
+137,Nagoya University,76.166,Japan,NagoyaUniv
+138,University of Western Australia,76.08,Australia,uwanews
+140,Technische Universitat Dresden (TU Dresden),76.004,Germany,tudresden_de
+140,University of Nova Gorica,76.004,Slovenia,NA
+141,Trinity College Dublin,75.989,Ireland,tcddublin
+142,University of Adelaide,75.846,Australia,UniofAdelaide
+143,University of Hamburg,75.79,Germany,unihh
+144,Kyushu University,75.745,Japan,KyushuUniv_EN
+145,Technical University of Berlin,75.483,Germany,TUBerlin
+146,University of Cape Town,75.453,South Africa,UCT_news
+147,Hokkaido University,75.351,Japan,HokkaidoUni
+148,University of Glasgow,75.328,UK,UofGlasgow
+149,Rockefeller University,75.246,USA,RockefellerUniv
+150,Lancaster University,75.159,UK,LancasterUni
+151,Katholieke Universiteit Leuven (KU Leuven),75.153,Belgium,LeuvenU
+152,"State University of New York, Stony Brook",74.975,USA,stonybrooku
+153,Humboldt University of Berlin,74.963,Germany,HumboldtUni
+154,University Paris Diderot - Paris 7,74.955,France,ParisDiderot
+155,University of Cologne,74.928,Germany,UniCologne
+156,University of Malaya,74.869,Malaysia,unimalaya
+157,National Research Nuclear University MEPhI (Moscow Engineering Physics Institute),74.845,Russia,UMephi
+158,Colorado School of Mines,74.788,USA,coschoolofmines
+159,University of Colorado,74.772,USA,CUSystem
+160,University of Kansas,74.589,USA,UnivOfKansas
+161,University of Munster,74.588,Germany,WWU_Muenster
+162,University of Sheffield,74.492,UK,sheffielduni
+163,University of Barcelona,74.483,Spain,UniBarcelona
+164,Sungkyunkwan University,74.43,Republic of Korea,SKKU_1398
+165,University of Arizona,74.35,USA,uarizona
+166,Cardiff University,74.158,UK,cardiffuni
+167,University of Leicester,74.092,UK,uniofleicester
+168,Technion Israel Institute of Technology,73.921,Israel,TechnionLive
+169,University of Illinois at Urbana - Champaign,73.901,USA,Illinois_Alma
+170,"University of California, Irvine",73.804,USA,UCIrvine
+171,Korea University,73.527,Republic of Korea,UniversityKorea
+172,"University of California, Santa Barbara",73.499,USA,ucsantabarbara
+173,Northeastern University,73.344,USA,Northeastern
+174,Indiana University,73.32,USA,IndianaUniv
+175,Hanyang University,73.241,Republic of Korea,i_hanyang
+176,Pennsylvania State University,73.195,USA,penn_state
+177,Tokyo Medical and Dental University,73.182,Japan,TMDUniversity
+178,Tomsk State University,73.129,Russia,TomskUni
+179,Yonsei University,73.067,Republic of Korea,yonsei_u
+180,Texas A&M University,72.951,USA,TAMU
+181,Weizmann Institute of Science,72.817,Israel,WeizmannScience
+182,University of Wurzburg,72.814,Germany,Uni_WUE
+183,State University of Campinas (Unicamp),72.702,Brazil,unicampoficial
+184,University of Erlangen Nuremberg,72.608,Germany,FAU_Germany
+185,University of York,72.505,UK,UniOfYork
+186,University of Ottawa,72.435,Canada,uOttawa
+187,Tel Aviv University,72.407,Israel,TelAvivUni
+188,University of Tsukuba,72.365,Japan,UofTsukuba
+189,University of Gothenburg,72.28,Sweden,uniofgothenburg
+190,Aalto University,72.261,Finland,AaltoUniversity
+191,University of Reading,72.079,UK,UniofReading
+192,University of Exeter,71.939,UK,UniofExeter
+193,University of East Anglia,71.866,UK,uniofeastanglia
+194,"State University of New York, Buffalo",71.864,USA,UBuffalo
+195,University of Ulm,71.841,Germany,uni_ulm
+196,Gwangju Institute of Science and Technology,71.786,Republic of Korea,NA
+197,Western University,71.739,Canada,WesternU
+198,University of Freiburg,71.275,Germany,UniFreiburg
+199,Universite Libre de Bruxelles,71.252,Belgium,ULBruxelles
+200,Wake Forest University,71.15,USA,WakeForest
+201,University of Connecticut,71.142,USA,UConn
+202,"Royal Holloway, University of London",71.094,UK,RoyalHolloway
+203,Temple University,70.933,USA,TempleUniv
+204,North Carolina State University,70.768,USA,NCState
+205,Aix Marseille University,70.732,France,univamu
+206,University of Aberdeen,70.625,UK,aberdeenuni
+207,Newcastle University,70.561,UK,UniofNewcastle
+208,Pompeu Fabra University,70.308,Spain,UPFBarcelona
+209,University of Pisa,70.263,Italy,Unipisa
+210,Laval University,70.225,Canada,universitelaval
+211,University of Montpellier,70.066,France,umontpellier
+212,University of Padua,69.935,Italy,UniPadova
+213,Tehran University of Medical Sciences,69.894,Iran,NA
+214,University of Hawaii,69.823,USA,UHawaiiNews
+215,University College Dublin,69.687,Ireland,ucddublin
+216,Moscow Institute of Physics and Technology,69.657,Russia,phystech_en
+217,Drexel University,69.495,USA,DrexelUniv
+218,Harbin Institute of Technology,69.494,China,HIT_China
+219,University of Surrey,69.483,UK,UniOfSurrey
+220,James Cook University,69.4,Australia,jcu
+221,"Indian Institute of Technology, Kharagpur",69.208,India,IITKgp
+222,Dalhousie University,68.82,Canada,DalhousieU
+223,University of Nebraska,68.757,USA,u_nebraska
+224,Universiti Teknologi Malaysia,68.739,Malaysia,utm_my
+225,St George`s University of London,68.676,UK,StGeorgesUni

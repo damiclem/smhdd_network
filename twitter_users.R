@@ -37,7 +37,7 @@ auth.api_secret_key <- auth.data$api_secret_key
 auth.bearer_token <- req.auth(auth.api_key, auth.api_secret_key)
 
 # Get univeristies with twitter ids
-rankings <- read_csv('data/rankings_clean.csv')
+universities <- read.csv("data/rankings_clean.csv", stringsAsFactors=FALSE)
 
 
 # Define a table for twitter accounts
@@ -45,9 +45,7 @@ users <- tibble(
   id=character(),
   screen_name=character(),
   location=character(),
-  url=character(),
   description=character(),
-  protected=logical(),
   verified=logical(),
   followers_count=numeric(),
   friends_count=numeric(),
@@ -58,8 +56,8 @@ users <- tibble(
 # Retrieve users info from their screen name through the Twitter APIs
 # Only 100 users can be retrieved at each API call
 # A maximum number of 300 users can be retrieved in a 15 minutes window
-users.ids <- rankings %>%
-  select('twitter') %>%  # Get user ids
+users.ids <- universities %>%
+  select(twitter_name) %>%  # Get user ids
   pull()  # Turn user ids into plain array
 # Define user batches of size 100
 users.batches <- split(users.ids, ceiling(seq_along(users.ids)/100))
@@ -88,9 +86,7 @@ for (i in 1:length(users.batches)) {
       id=as.character(curr.user$id_str),
       screen_name=curr.user$screen_name,
       location=curr.user$location,
-      url=ifelse(exists('curr.user$url'), as.character(curr.user$url), NA),
       description=curr.user$description,
-      protected=as.logical(curr.user$protected),
       verified=as.logical(curr.user$verified),
       followers_count=as.numeric(curr.user$followers_count),
       friends_count=as.numeric(curr.user$friends_count),
@@ -99,6 +95,17 @@ for (i in 1:length(users.batches)) {
     )
   }
 }
+
+
+# Merge Users and Rankings
+users <-merge(x=universities,y=users, by.x="twitter_name", by.y="screen_name", all.x = TRUE)
+
+# Reorder columns
+users <- users[c("rank","university","score","country","location",
+                 "twitter_name","id","language","verified","description",
+                 "n_posts","followers_count","friends_count")]
+
+users <- users[order(users$rank),]
 
 # Save users table to disk
 users %>% write_csv('data/users.csv')

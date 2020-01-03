@@ -6,6 +6,7 @@ users <- read_csv('data/users.csv', col_types='ncncccnclcnnn')
 friendship <- read_csv('data/friendship.csv', col_types='cc')
 
 # Get all available universities
+users <- users[!is.na(users$id),]
 uni <- users %>%
   select(id) %>%
   distinct %>%

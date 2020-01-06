@@ -1,3 +1,4 @@
+library(tidyverse)
 library(geonames)
 
 # Retrieve data

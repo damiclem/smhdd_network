@@ -144,6 +144,9 @@ friendship <- read.csv("data/friendship.csv", stringsAsFactors=FALSE)
 users <- read.csv('data/users.csv', stringsAsFactors=FALSE) 
 positions <- read.csv("data/positions.csv", stringsAsFactors=FALSE)
 
+# removing NAs from positions
+positions <- positions[!is.na(positions$id),]
+
 # Add 'from' user info
 friendship <- users %>% 
   select(id) %>%

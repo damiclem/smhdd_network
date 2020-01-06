@@ -107,5 +107,20 @@ users <- users[c("rank","university","score","country","location",
 
 users <- users[order(users$rank),]
 
+
+# Filling missing location 
+# a contains universities with missing location
+a<- users[users$location=="",]
+a
+
+# filling missing location
+users[users$rank==7,"location"] <- "Zürich, Switzerland"
+users[users$rank==42,"location"] <- "Tokyo"
+users[users$rank==55,"location"] <- "Munich, Germany"
+users[users$rank==76,"location"] <- "Hangzhou, China"
+users[users$rank==134,"location"] <- "Barcelona"
+users[users$rank==137,"location"] <- "Nagoya, Japan"
+
+
 # Save users table to disk
 users %>% write_csv('data/users.csv')

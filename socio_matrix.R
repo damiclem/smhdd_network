@@ -1,18 +1,26 @@
 # Dependencies
 library(tidyverse)
 
+
 # Load datasets
-users <- read_csv('data/users.csv', col_types='ncncccnclcnnn')
+
+# Load users
+users <- read_csv('data/users.csv', col_types='ncncccnclcnnn') %>%
+  filter(!is.na(id)) %>%
+  distinct
+
+# Load friendship relationships
 friendship <- read_csv('data/friendship.csv', col_types='cc')
 
+
 # Get all available universities
-users <- users[!is.na(users$id),]
-uni <- users %>%
-  select(id) %>%
-  distinct %>%
+uni <- users %>% 
+  select(id) %>% 
+  distinct %>% 
   pull
 # Get universities array info
 str(uni)
+
 
 # Instantiate new empty matrix
 socio.matrix <- matrix(0, nrow=length(uni), ncol=length(uni))

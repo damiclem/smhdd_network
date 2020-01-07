@@ -114,21 +114,20 @@ rgm.gen <- function(socio.matrix, prob) {
   return(out.matrix)
 }
 
-rgm.stat <- function(Y) {
-  # Get outdegree and indegree
-  #out.deg <- apply(socio.matrix, 1, sum, na.rm=T)
-  #in.deg <- apply(socio.matrix, 2, sum, na.rm=T)
-  # Compute standard errors
-  #out.std.error <- std.error(out.deg)
-  #in.std.error <- std.error(in.deg)
-  # Return computed standard errors
-  #return(c(in.std.error, out.std.error))
-  gof<-gofstats(Y)
-  return(gof)
+rce.stat <- function(Y) {
+  # Compute standard error for out- and in- degree
+  rgm.out <- rgm.stat(Y)
+  out.std.error <- rgm.out[2]
+  in.std.error <- rgm.out[1]
+  # Add mutual dyads (useful for independecy of y variables evaluation)
+  conc <- (Y == t(Y))
+  mu.dy <- sum(conc[Y == 1], na.rm=T) / 2
+  # Return standard errors and mutual dyads
+  return(c(in.std.error, out.std.error, mu.dy))
 }
 
-diag(socio.matrix)<- NA
-
+#diag(socio.matrix)<- NA
+rce.stat(socio.matrix)
 
 # Compute paraemtrix bootstrap (using boot(...) function)
 
@@ -144,8 +143,44 @@ srg.boot$t0[4]
 rankA <- c(rep(1,25),rep(0,220-25))
 rankB <- c(rep(0,25),rep(1,25),rep(0,220-50))
 rankC <- c( rep(0,50), rep(1,50), rep(0,220-100))
+
+country <- (users %>% select(country.y) %>% pull)
+# Define if the university is located in US
+is_usa <- !is.na(country) & country== 'US'
+# Define number of followers
+followers <- users %>% select(followers_count) %>% pull
+# Define number of friends
+friends <- users %>% select(friends_count) %>% pull
+# Define if user is verified
+verified <- users %>% select(verified) %>% pull
+# define number of post
+post_num <- users %>% select(n_posts) %>% pull
+# define language
+language <- users %>% select(language)%>% pull
+
 X <- cbind(rankA,rankB,rankC)
 
+# Esplicative a livello di diadi
+XlegAA<- outer(rankA,rankA)
+XlegBB<- outer(rankB,rankB)
+XlegCC<- outer(rankC,rankC)
+XlegAB <- outer(rankA,rankB)
+XlegBA <- outer(rankB,rankA)
+XlegAC <- outer(rankA,rankC)
+XlegCA <- outer(rankC,rankA)
+XlegBC <- outer(rankB,rankC)
+XlegCB <- outer(rankC,rankB)
+
+Xleg <- array(NA, dim = c(220,220,9))
+Xleg[,,1]<-XlegAA 
+Xleg[,,2]<-XlegBB 
+Xleg[,,3]<- XlegCC
+Xleg[,,4]<- XlegAB
+Xleg[,,5]<- XlegBA
+Xleg[,,6]<- XlegAC
+Xleg[,,7]<- XlegCA
+Xleg[,,8]<- XlegBC
+Xleg[,,9]<- XlegCB
 
 # Adesso che ho visto il corrispettivo  con quello che abbiamo fatto finora passo a amen
 
@@ -168,7 +203,7 @@ save(fit_SRM, file='Amen models/SRM')
 # Ci sono comunque ancora problemi a livello di triade
 
 # Modello con effetto delle covariate
-fit_AME<-ame(socio.matrix, Xr=X,Xc=X, model="bin")
+fit_AME<-ame(socio.matrix, model="bin", r=3)
 summary(fit_AME)
 plot(fit_AME)
 save(fit_AME, file='Amen models/AME')
@@ -176,8 +211,14 @@ save(fit_AME, file='Amen models/AME')
 
 # provo a inserire delle covariate di diadi
 # calcola tutte le possibili differenze di ranking tra i nodi
-Xleg <- outer(1:220,1:220, FUN = function(x,y) x-y)
-fit_AME2<-ame(socio.matrix,Xdyad = Xleg , Xr=X,Xc=X, model="bin")
+fit_AME2<-ame(socio.matrix,Xdyad = Xleg,Xr=X,Xc=X, model="bin")
 summary(fit_AME2)
 save(fit_AME, file='Amen models/AME2')
+fit_AME2$YPM # queste in  sono probabilità a posteriori quindi se le passiamo come un vettore 
+# possiamo calcolarci le statistiche solite
 
+R <- 10**2 # Define number of replicates
+mu <- c(fit_AME2$YPM) # Define mean mu
+srg.boot <- boot(data=socio.matrix, statistic=rce.stat, R=R, sim='parametric', ran.gen=rgm.gen, mle=mu)
+mean(srg.boot$t[,3]>srg.boot$t0[3])
+srg.boot$t0

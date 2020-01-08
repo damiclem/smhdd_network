@@ -2,6 +2,7 @@ library(dplyr)
 library(reshape2)
 library(ggplot2)
 library(tidyverse)
+library(corrplot)
 
 # Import dataframe
 users <- read.csv("data/users.csv", stringsAsFactors=FALSE)
@@ -227,10 +228,17 @@ ggplot(users, aes(x=outdegree)) +
   labs(y = "Count")+
   labs(title = "Outdegree distributions")
 
-
-
 ####################################
 
+
+# Correlation
+####################################
+users[is.na(users)] <- 0
+
+users.quant <- users[,(names(users) %in% c("score","n_posts","followers_count","friends_count","indegree","outdegree"))]
+corrplot.mixed(cor(users.quant), tl.col = "black", tl.cex=0.7)
+
+####################################
 
 
 

@@ -1,17 +1,22 @@
 library(tidyverse)
 library(igraph)
+library(ggmap)
+library(viridis)
 
 
 ##################
 # RETRIEVE EDGES
 ##################
+
 # Get files
 friendship <- read.csv("data/friendship.csv", stringsAsFactors=FALSE)
 users <- read.csv('data/users.csv', stringsAsFactors=FALSE) 
 positions <- read.csv("data/positions.csv", stringsAsFactors=FALSE)
 
-# removing NAs from positions
-positions <- positions[!is.na(positions$id),]
+# Remove NAs from positions
+positions <- positions %>% 
+  filter(!is.na(id)) %>%
+  select(id, everything())
 
 # Add 'from' user info
 friendship <- users %>% 
@@ -20,29 +25,22 @@ friendship <- users %>%
 
 # Filter friendship by known users
 friendship <- friendship %>%
-  inner_join(
-    users %>% select(id),
-    by=c('to' = 'id'),
-    suffix=c('.from', '.to')) %>%
-  rename(id.from = id, id.to = to)
+  inner_join(users %>% select(id),
+             by=c('to' = 'id'),
+             suffix=c('.from', '.to')) %>%
+  rename(id.from = id, id.to = to) %>%
+  distinct
 
-friendship <- friendship %>% distinct()
+# Create network object
+g <- graph_from_data_frame(friendship, directed = TRUE, vertices = positions)
 
-
-# creating graph object
-g <- graph_from_data_frame(friendship, directed = TRUE, vertices = positions$id)
-
-
-# getting positions for the edges
+# Get positions for the edges
 edges_for_plot <- friendship %>%
   inner_join(positions %>% select(id, lng, lat), by = c('id.from' = 'id')) %>%
   rename(x = lng, y = lat) %>%
   inner_join(positions %>% select(id, lng, lat), by = c('id.to' = 'id')) %>%
-  rename(xend = lng, yend = lat)
-
-# remove edges between universities in the same city
-edges_for_plot<- edges_for_plot[!(edges_for_plot$x==edges_for_plot$xend & edges_for_plot$y==edges_for_plot$yend),]
-
+  rename(xend = lng, yend = lat) %>%
+  filter(!((x == xend) & (y == yend))) # Exclude edges between universities of the same cities
 
 
 ###########
@@ -67,11 +65,16 @@ country_shapes <- geom_polygon(aes(x = long, y = lat, group = group),
 mapcoords <- coord_fixed(xlim = c(-150, 180), ylim = c(-55, 80))
 
 
-ggplot(positions) + country_shapes +
-  geom_curve(aes(x=x, y=y, xend=xend, yend=yend),     # draw edges as arcs
-             data=edges_for_plot, curvature=0.33, alpha = 0.3,
-             arrow = arrow(length = unit(0.01, "npc")))+
-  geom_point(aes(x=lng, y=lat),           # draw nodes
-             shape=16, color=positions$color, stroke=0.5) +    # scale for node size
+ggplot() + country_shapes +
+  # Draw lines
+  geom_curve(data=edges_for_plot,
+             aes(x=x, y=y, xend=xend, yend=yend),
+             curvature=0.33, alpha=0.2, color='dodgerblue') +
+  # Draw points
+  geom_point(data=positions, 
+             aes(x=lng, y=lat),
+             color=positions$color) +
+  # Draw map
   mapcoords +
   maptheme
+  

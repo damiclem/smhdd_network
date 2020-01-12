@@ -111,6 +111,40 @@ ggplot(data=users, aes(x=out_degree, y=in_degree, colour=twitter_name, label=twi
   theme(legend.position = 'none') +
   labs(x='Outdegree', y='Indegree')
 
+# Compute distribution of indegree
+indeg.dist  <- users %>% 
+  select(in_degree) %>% 
+  count(in_degree) %>% 
+  mutate(f=n/sum(n))
+
+# Compute distribution of indegree
+outdeg.dist  <- users %>% 
+  select(out_degree) %>% 
+  count(out_degree) %>% 
+  mutate(f=n/sum(n))
+
+# Plot degree distribution
+ggplot(data=NULL) +
+  geom_point(data=indeg.dist, aes(x=in_degree, y=f, color=as.factor('In'))) +
+  geom_point(data=outdeg.dist, aes(x=out_degree, y=f, color=as.factor('Out'))) +
+  labs(x='Degree', y='Frequency', color='Degree type') +
+  theme(legend.position=c(.91, .91))
+
+# Plot degree distribution
+ggplot(data=NULL) +
+  geom_point(data=indeg.dist, aes(x=log10(in_degree), y=log10(f), color=as.factor('In'))) +
+  geom_point(data=outdeg.dist, aes(x=log10(out_degree), y=log10(f), color=as.factor('Out'))) +
+  labs(x='Degree', y='Frequency', color='Degree type') +
+  theme(legend.position=c(.91, .91))
+
+# Plot cumulative degree distribution
+ggplot(data=NULL) +
+  geom_point(data=indeg.dist, aes(x=log10(in_degree), y=cumsum(log10(f)), color=as.factor('In'))) +
+  geom_point(data=outdeg.dist, aes(x=log10(out_degree), y=cumsum(log10(f)), color=as.factor('Out'))) +
+  labs(x='Degree', y='Frequency', color='Degree type') +
+  theme(legend.position=c(.91, .91))
+  
+
 # Check shortest paths
 # Note that these shortest paths take into account directionality
 shortest_paths(net.full, from='39585367') # From harvard
@@ -392,7 +426,7 @@ set.vertex.attribute(ergm.net, 'friends', friends[-v.isolated])
 set.vertex.attribute(ergm.net, 'verified', verified[-v.isolated])
 set.vertex.attribute(ergm.net, 'ranking', ranking[-v.isolated])
 
-# creo anche questi perchè vado meglio a capire che contrasti fare
+# creo anche questi perch? vado meglio a capire che contrasti fare
 set.vertex.attribute(ergm.net, 'rank25', rankA[-v.isolated])
 set.vertex.attribute(ergm.net, 'rank50', rankB[-v.isolated])
 set.vertex.attribute(ergm.net, 'rank100', rankC[-v.isolated])
@@ -541,5 +575,5 @@ ggplot(data=NULL, aes(x=ergm.boot$t[, 3], y=..density.., fill=1)) +
   theme(legend.position='none') +
   labs(title='Bootstrapped mutual dyads coefficients distribution', 
        x='Bootstrapped coefficients', y='Density')
-# Commento: in realtà il risultato è ancora abbastanza insoddisfacente in outdegree e indegree
+# Commento: in realt? il risultato ? ancora abbastanza insoddisfacente in outdegree e indegree
 

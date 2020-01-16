@@ -90,9 +90,12 @@ rce.stat <- function(Y) {
   out.std.error <- rgm.out[2]
   in.std.error <- rgm.out[1]
   # Add dyads depency (useful for independecy of y variables evaluation)
-  dyad.dep<- suppressWarnings( cor( c(Y),c(t(Y)) , use="complete.obs") )
+  #dyad.dep<- suppressWarnings( cor( c(Y),c(t(Y)) , use="complete.obs") )
+  # Add mutual dyads (useful for independecy of y variables evaluation)
+  conc <- (Y == t(Y))
+  mu.dy <- sum(conc[Y == 1], na.rm=T) / 2
   # Return standard errors and mutual dyads
-  return(c(in.std.error, out.std.error, dyad.dep))
+  return(c(in.std.error, out.std.error, mu.dy))
 }
 
 #diag(socio.matrix)<- NA
@@ -104,7 +107,7 @@ R <- 10**4 # Define number of replicates
 mu <- mean(socio.matrix, na.rm = T) # Define mean mu
 srg.boot <- boot(data=socio.matrix, statistic=rce.stat, R=R, sim='parametric', ran.gen=rgm.gen, mle=mu)
 save(srg.boot,file='srg_boot')
-load(file.choose())
+#load(file.choose())
 
 # faccio i grafici che mi servono 
 data <- as.data.frame(srg.boot$t)
@@ -119,7 +122,7 @@ p2<- ggplot(data = data, aes(x=data[,2]))+
         geom_vline( xintercept =  srg.boot$t0[2], color ='red')+
         xlab('Out-degree std error')
 p3<- ggplot(data = data, aes(x=data[,3]))+ 
-        geom_histogram(binwidth = 0.01,fill= 'Royalblue')+xlim(-1,1)+
+        geom_histogram(binwidth = 1,fill= 'Royalblue')+xlim(0,700)+
         geom_vline( xintercept =  srg.boot$t0[3], color ='red')+
         xlab('Dyad dependency')
 
@@ -129,6 +132,7 @@ grid.arrange(
   layout_matrix = rbind(c(1,1, 2, 2),
                         c(NA, 3,3,NA))
 )
+
 # creo vettore di esplicative
 rank25 <- c(rep(1,25),rep(0,220-25))
 rank50 <- c(rep(0,25),rep(1,25),rep(0,220-50))
@@ -178,28 +182,63 @@ ergm.gen <- function(socio.matrix, fit) {
 
 
 # faccio la stessa cosa per il modello con effetti fissi (ANOVA)
-fit.ergm.anova <- ergm(ergm.net ~ edges + sender + receiver)
-R <- 10**4 # Number of replicates
-ergm.boot.anova <- boot(data=socio.matrix, statistic=rce.stat, R=R, sim='parametric', ran.gen = ergm.gen, mle=fit.ergm.anova)
-save(ergm.boot.anova ,file='boot_anova')
-save(fit.ergm.anova, file = 'anova_fit')
+#fit.ergm.anova <- ergm(ergm.net ~ edges + sender + receiver)
 # qua avrei bisogno dei soliti tre grafici
 
-load(file.choose())
-data <- as.data.frame(ergm.boot.anova$t)
+#load(file.choose())
 
+# FASTER ANOVA FOR BOOT
+# ANOVA model
+
+# bisogna classificare come fattori indivuduali sia la socialit? che l'attrativit?
+
+# Initialize new sociomatrix
+Y <- socio.matrix # Copy sociomatrix by value
+diag(Y) <- NA # Set values on the diagonal to NA
+row.matrix <- matrix(data=(1:nrow(Y)), nrow=nrow(Y), ncol=nrow(Y))
+col.matrix <- t(row.matrix) 
+y <- c(Y) # Vectorize sociomatrix
+row.v <- c(row.matrix) # Vectorize rows matrix
+col.v <- c(col.matrix) # vectorize columns matrix
+# Fit logistic regression
+fit.rce.cent <- glm(y ~  C(factor(row.v), sum) + C(factor(col.v), sum) , family=binomial)
+# Check fit summary
+summary(fit.rce.cent)
+
+
+
+# Individual effects
+mu.hat <- fit.rce.cent$coef[1] # Estimated mean
+a.hat <- fit.rce.cent$coef[1 + 1:(nrow(Y) - 1)]
+a.hat <- c(a.hat, -sum(a.hat))
+b.hat <- fit.rce.cent$coef[nrow(Y) + 1:(nrow(Y) - 1)]
+b.hat <- c(b.hat, -sum(b.hat)) 
+# Compute estimated probabilities for every cell
+mu.ij.mle <- mu.hat + outer(a.hat, b.hat, '+') # Mu ij maximum likelihood estimation 
+p.mle <- exp(mu.ij.mle) / (1 + exp(mu.ij.mle))
+diag(p.mle) <- NA
+
+
+# Analysis of the inferential model through parameteric bootstrap
+R <- 10**4 # Number of replicates
+anova.boot <- boot(data=socio.matrix, statistic=rce.stat, R=R, sim='parametric', ran.gen=rgm.gen, mle=p.mle)
+save(anova.boot ,file='boot_anova')
+save(fit.rce.cent, file = 'anova_fit')
+
+data <- as.data.frame(anova.boot$t)
+data[,3]
 
 p1<- ggplot(data = data, aes(x=data[,1]))+ 
   geom_histogram(binwidth = 0.01,fill= 'Royalblue')+xlim(15,18)+
-  geom_vline( xintercept =  ergm.boot.anova$t0[1], color ='red')+
+  geom_vline( xintercept =  anova.boot$t0[1], color ='red')+
   xlab('In-degree std error')
 p2<- ggplot(data = data, aes(x=data[,2]))+ 
   geom_histogram(binwidth = 0.01,fill= 'Royalblue')+xlim(13,17)+
-  geom_vline( xintercept =  ergm.boot.anova$t0[2], color ='red')+
+  geom_vline( xintercept =  anova.boot$t0[2], color ='red')+
   xlab('Out-degree std error')
 p3<- ggplot(data = data, aes(x=data[,3]))+ 
-  geom_histogram(binwidth = 0.01,fill= 'Royalblue')+xlim(-0.40,0.40)+
-  geom_vline( xintercept =  ergm.boot.anova$t0[3], color ='red')+
+  geom_histogram(binwidth = 1,fill= 'Royalblue')+xlim(0,700)+
+  geom_vline( xintercept =  anova.boot$t0[3], color ='red')+
   xlab('Dyad dependency')
 
 grid.arrange(
@@ -229,7 +268,7 @@ save(ergm.boot.final ,file='boot_ergm')
 save(fit.ergm.final, file = 'ergm_fit')
 # qua avrei bisogno dei  soliti tre grafici
 
-load(file.choose())
+#load(file.choose())
 data <- as.data.frame(ergm.boot.final$t)
 
 
@@ -253,7 +292,7 @@ grid.arrange(
                         c(NA, 3,3,NA))
 )
 
-load(file.choose())
+#load(file.choose())
 summary(fit.ergm.final)
 
 
@@ -291,19 +330,9 @@ dimnames(Xleg)[[3]] <- list("int25-25","int50-50","int100-100",
 
 
 # stimo il modello con le covariate
-fit_AME2<-ame(socio.matrix,Xdyad=Xleg,Xr=X,Xc=X, model="bin")
+fit_AME2<-ame(socio.matrix,Xdyad=Xleg,Xr=X[,4:5],Xc=X, model="bin")
 summary(fit_AME2)
 
-### Considerazioni
-# Prima di tutto secondo me conviene mettere una tabella con le stime dei coefficienti e 
-# le relative statistiche
-
-# Poi si possono fare varie considerazioni sull'effetto delle variabili
-# secondo me sono interessanti quelle relative al ranking (es le università più in alto in classifica
-# sono le più seguite) e il fatto che le università americane hanno più seguito rispetto a quelle
-# che non lo sono. COSA IMPORTANTE: il modello è bayesiano quindi bisogna stare attenti a come si commenta.
-# poi sulle simulazioni bootstrap si può fare un discorso abbastanza veloce come quelli
-# che ci sono negli altri 3 modelli (sottolineando come questo sia decisamente migliore)
 
 save(fit_AME2, file='Amen models/AME2')
 
@@ -339,7 +368,7 @@ p2<- ggplot(data = data, aes(x=data[,2]))+
   geom_vline( xintercept =  srrg.boot$t0[2], color ='red')+
   xlab('Out-degree std error')
 p3<- ggplot(data = data, aes(x=data[,3]))+ 
-  geom_histogram(binwidth = 0.01,fill= 'Royalblue')+xlim(0.30,0.50)+
+  geom_histogram(binwidth = 1,fill= 'Royalblue')+xlim(400,800)+
   geom_vline( xintercept =  srrg.boot$t0[3], color ='red')+
   xlab('Dyad dependency')
 
@@ -350,8 +379,7 @@ grid.arrange(
                         c(NA, 3,3,NA))
 )
 
-srrg.boot$t[,3]
 
-load(file.choose())
+#load(file.choose())
 
 # 
